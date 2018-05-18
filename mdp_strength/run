@@ -1,0 +1,88 @@
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
+import re
+from inginious import feedback
+from inginious import input
+
+
+if __name__ == '__main__':
+    error = 0
+    #Q1
+    thecode = input.get_input("pass")
+    digit = False
+    uppercase = False
+    lowercase = False
+    lenstr = len(thecode)
+    if re.search(r'\d', thecode):
+        digit = True
+    # Check if contains at least one uppercase letter
+    if re.search(r'[A-Z]', thecode):
+        uppercase = True
+    # Check if contains at least one lowercase letter
+    if re.search(r'[a-z]', thecode):
+        lowercase = True
+    if lenstr < 8:
+        result='failed'
+        grade = 0
+        error = 1
+        feed = "Votre mot de passe est trop petit. Visez un mot avec au minimum 8 caractères."
+    
+    if not digit and not uppercase and lowercase:
+        result = 'failed'
+        grade = 20
+        error = 1
+        feed = "Il n'y a pas de majuscules ni de chiffres. C'est un mot de passe faible. Pensez à ajouter des chiffres et des majuscules."
+    if digit and not uppercase and lowercase:
+        result = 'failed'
+        grade = 50
+        error = 1
+        feed = "Il n'y a pas de majuscules. C'est un mot de passe moyen. Pensez à ajouter des majuscules."
+    if not digit and uppercase and lowercase:
+        result = 'failed'
+        grade = 50
+        error = 1
+        feed = "Il n'y a pas de chiffres. C'est un mot de passe moyen. Pensez à ajouter des chiffres."
+    if digit and uppercase and lowercase:
+        result = 'success'
+        grade = 100
+        feed = "Félicitations. Ce mot de passe correspond à la demande!"
+    feedback.set_problem_result(result,"pass")
+    feedback.set_problem_feedback(feed,"pass")
+    #q2    
+    pass2 = input.get_input("pass2")
+    if pass2 == "iFb3c!m":
+        feedback.set_problem_result("success","pass2")
+        feedback.set_problem_feedback("C'est correct!","pass2")
+    else:
+        feedback.set_problem_result("failed","pass2")
+        feedback.set_problem_feedback("Vous avez fait une erreur","pass2")
+        error = error+1
+    #q3    
+    pass3 = input.get_input("pass3")
+    if re.match(".*\\s.*\\s.*\\s.*",pass3) is not None:
+        feedback.set_problem_result("success","pass3")
+        feedback.set_problem_feedback("C'est correct!","pass3")
+    else:
+        feedback.set_problem_result("failed","pass3")
+        feedback.set_problem_feedback("Vous avez fait une erreur","pass3")
+        error = error+1
+    #q3b    
+    pass3b = input.get_input("pass3b")
+    correct = True
+    for word in re.split('[# ,/.-;]',pass3b):
+        print(word)
+        if word not in pass3:
+            correct = False
+    if not correct :
+        feedback.set_problem_result("failed","pass3b")
+        feedback.set_problem_feedback("Vous avez fait une erreur","pass3b")
+        error = error+1
+    else:
+        feedback.set_problem_result("success","pass3b")
+        feedback.set_problem_feedback("C'est correct!","pass3b")
+    if error == 0 :
+        feedback.set_global_result("success")
+        feedback.set_grade(100)
+    else:
+        feedback.set_global_result("failed")
+        feedback.set_grade((error/4)*100)

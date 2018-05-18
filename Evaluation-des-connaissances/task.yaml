@@ -1,0 +1,179 @@
+accessible: true
+author: ''
+context: |-
+    Cette tâche comportant une dizaine de questions a pour but d'évaluer votre niveau de connaissance sur les différents thèmes qui seront abordés.
+    Vous pouvez valider vos réponses une seule fois (contrairement aux autres tâches), à la fin de la séance vous serez invités à répondre à nouveau à ces questions afin de voir si votre niveau de connaissance a évolué.
+
+    Bon amusement.
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Evaluation des connaissances
+network_grading: false
+order: 15
+problems:
+    '1':
+        type: multiple_choice
+        choices:
+        -   text: Oui
+        -   text: Non
+            valid: true
+        -   text: Je ne sais pas
+        limit: 0
+        header: Les cookies sont-ils des virus ?
+        name: Cookies (1)
+    '2':
+        choices:
+        -   text: Oui
+            valid: true
+        -   text: Non
+        -   text: Je ne sais pas
+        limit: 0
+        name: Cookies (2)
+        type: multiple_choice
+        header: Les cookies peuvent-ils permettre à un site/une personne l'obtention
+            d'informations vous concernant sans que vous en ayez donné l'autorisation
+            ?
+    '3':
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        -   text: Je ne sais pas
+        name: Interactions entre les sites web (1)
+        header: On appelle "sites tiers" (ou "tierces parties") des sites qui ont
+            de moins en moins de visiteurs ?
+        limit: 0
+        type: multiple_choice
+    '4':
+        choices:
+        -   valid: true
+            text: Oui
+        -   text: Non
+        -   text: Je ne sais pas
+        header: L'énorme majorité des sites Internet sont connectés à d'autres sites
+            Internet qui, de manière automatique et sans notre accord, vont récolter
+            des informations sur nous.
+        name: Interractions entre les sites web (2)
+        limit: 0
+        type: multiple_choice
+    '5':
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        -   text: Je ne sais pas
+        name: Confiance dans le web (1)
+        type: multiple_choice
+        limit: 0
+        header: Télécharger et cracker un programme payant est légal et sûr pour votre
+            ordinateur.
+    '6':
+        limit: 0
+        name: Confiance dans le web (2)
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        -   text: Je ne sais pas
+        header: Publier quelque chose sur Internet ne laisse aucune trace et ne reste
+            pas longtemps en ligne.
+        type: multiple_choice
+    '7':
+        name: Créer son mot de passe (1)
+        limit: 0
+        choices:
+        -   text: Oui
+        -   text: Non
+            valid: true
+        -   text: Je ne sais pas
+        header: Un bon mot de passe se limite à un mot du dictionnaire.
+        type: multiple_choice
+    '8':
+        header: Utiliser le même mot de passe pour tous mes comptes est une bonne
+            idée.
+        choices:
+        -   text: oui
+        -   text: non
+            valid: true
+        -   text: Je ne sais pas
+        name: Créer son mot de passe (2)
+        limit: 0
+        type: multiple_choice
+    '9':
+        choices:
+        -   valid: true
+            text: Oui
+        -   text: Non
+        -   text: Je ne sais pas
+        name: Referer et images (1)
+        limit: 0
+        header: Les pubs dans les sites que je visite sont des sous-parties d'autres
+            sites.
+        type: multiple_choice
+    '10':
+        choices:
+        -   text: Oui
+        -   text: Non
+            valid: true
+        -   text: Je ne sais pas
+        type: multiple_choice
+        header: Une régie publicitaire monte le son des pubs à la TV.
+        limit: 0
+        name: Referer et images (2)
+    '11':
+        header: 'Pour pouvoir communiquer sur Internet, une machine ne doit pas forcément
+            disposer d''une adresse IP : avoir le Wifi ou la 4G suffit.'
+        choices:
+        -   text: Oui
+        -   text: Non
+            valid: true
+        -   text: Je ne sais pas
+        limit: 0
+        type: multiple_choice
+        name: Adresse IP ?
+    '12':
+        choices:
+        -   text: Oui
+        -   text: Non
+            valid: true
+        -   text: Je ne sais pas
+        limit: 0
+        name: Le web ?
+        type: multiple_choice
+        header: Lorsque je vais sur Facebook avec mon navigateur (i.e. en utilisant
+            le web), le serveur de Facebook et mon navigateur s'échangent des messages
+            (commandes et réponses) en respectant le protocole nommé DNS (Domain Name
+            Service).
+    '13':
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        -   text: Je ne sais pas
+        type: multiple_choice
+        header: Pour que Facebook puisse récolter des informations sur moi, il faut
+            que je me connecte sur leur site et que j'y poste des choses, comme des
+            commentaires ou des images.
+        name: Facebook m'espionne-t-il ?
+        limit: 0
+    '14':
+        header: Si je bloque les cookies **et** les images provenant de sites tiers,
+            il ne leur est plus possible de récolter des informations sur mon compte.
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        -   text: Je ne sais pas
+        type: multiple_choice
+        limit: 0
+        name: Les mouchards ?
+stored_submissions: 0
+submission_limit:
+    amount: 1
+    period: -1
+weight: 1.0

@@ -1,0 +1,261 @@
+accessible: false
+author: Nicolas Detienne
+context: |-
+    Durant cette partie de l'atelier, nous allons découvrir ensemble les liens qui lient des sites Internet entre eux. Ces relations entre le site que nous visitons volontairement (première partie) et des sites secondaires (tierces parties) qui, sans que nous le sachions, vont recevoir des informations nous concernant.
+
+    Au travers des questions ci-dessous nous allons découvrir ces liens et comprendre leurs buts, réels ou cachés.
+
+    Lorsque vous aurez validé l'ensemble de ces questions, vous obtiendrez une correction de vos réponses. N'hésitez pas à améliorer votre score en modifiant vos réponses et en resoumettant.
+    Lors de votre réussite, lisez également les commentaires, ils expliquent les bonnes réponses.
+
+    Nous allons utiliser une extension du navigateur appelée "Lightbeam". Cette extension va nous permettre de visualiser les liens entre les sites Internet. Pour démarrer cette extension, cliquez sur le tout petit bouton représentant un grand et deux petits triangles noirs, se trouvant à côté de la barre d'URL:
+
+
+    .. image:: 1/lightbeam.png
+
+
+    Revenez ensuite sur cet onglet pour répondre aux questions ci-dessous.
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon MAUVE.**
+
+    ----
+
+    **Vous avez 10 minutes pour accomplir cette tâche.**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: Les interractions entre les sites web
+network_grading: false
+order: 14
+problems:
+    '1':
+        choices:
+        -   text: '0'
+            feedback: Faux, recomptez bien les ronds dans Lightbeam.
+        -   text: '1'
+            valid: true
+            feedback: Effectivement, nous avons voulu aller sur le site de la Ferme
+                Equestre et, sans surprise, nous avons visité seulement ce site là.
+        -   text: Plusieurs
+            feedback: Faux, recomptez bien les ronds dans Lightbeam
+        limit: 0
+        header: |-
+            Commencez par activer l'extension LightBeam. Pour ce faire, allez dans les Add-Ons de FireFox (menu à droite). Cliquez sur "Extensions" et sélectionnez "Lightbeam". Rendez-la active "Enable".
+
+            Allons visiter le site de la |ferme_equ| de Louvain-la-Neuve.
+
+            .. |ferme_equ| raw:: html
+
+               <a href="http://www.ferme-equestre.be/" target="_blank">Ferme Equestre</a>
+
+            Combien de site(s) web pensez-vous avoir visités en allant sur ce site ?
+
+            Vérifiez votre réponse en allant voir l'onglet FireFox de Lightbeam. Combien de point(s) voyez-vous sur le graphe ?
+            Passez la souris sur ce(s) point(s) pour obtenir l'URL (le nom du site).
+        name: Visitons un premier site.
+        type: multiple_choice
+    '2':
+        success_message: |-
+            On a visité un site premier (sciences.be) ce qui a créé un rond sur le graphique. Ce site est relié à deux sites (tiers), d'une part google-analytics.com et, d'autre part, addtoany.com.
+
+            Aucun de ces deux sites n'a été visité volontairement. Le site du Printemps des Sciences fait en faite appel aux servies de Google pour faire des statistiques à propos du trafic et des visiteurs parcourant leur site (pages vues, fréquence des visites, pays d'origine du visiteur, etc). Addtoany est un lien dans la page du site qui permet de partager des articles sur les réseaux sociaux par exemple.
+
+            Donc, en allant sur la page du Printemps des Sciences, vous naviguez sur la page désirée mais sans le savoir votre explorateur (Firefox) a échangé des informations avec des sites tiers, à savoir Google-analytics (pour les statistiques) et AddToAny (pour les liens vers les réseaux sociaux).
+        choices:
+        -   text: 1 rond
+            feedback: Regardez bien le nombre de triangles (sites tiers) qui sont
+                reliés au rond "sciences.be". N'y a-t-il aucun triangle ?
+        -   valid: true
+            feedback: Parfait.
+            text: 1 rond et 1 ou plusieurs triangles (sites tiers)
+        -   text: Plusieurs ronds et plusieurs triangles (sites tiers)
+            feedback: Regardez bien le nombre de triangles (sites tiers) qui sont
+                reliés au rond "sciences.be"
+        limit: 0
+        header: |-
+            Allons à présent sur la page du |sciences|.
+
+            .. |sciences| raw:: html
+
+               <a href="http://www.sciences.be/" target="_blank">Printemps des Sciences</a>
+
+            Retournez voir LightBeam, les points sur le graphique sont les sites visités (volontairement - "sites premiers"), les triangles sont les sites impliqués avec le site visité ("sites tiers").
+            Combien de rond(s) et de triangle(s) sont reliés au site sciences.be ?
+        name: Un site impliquant d'autres sites
+        type: multiple_choice
+    '3':
+        success_message: Bien, on voit qu'il y a également toutes sortes de sites
+            tiers qui y sont reliés (FaceBook, Twitter, services de Google...) à des
+            fins publicitaires, de statistiques, ou des liens vers les réseaux sociaux.
+        type: multiple_choice
+        limit: 0
+        header: |-
+            Analysons à présent sur le site d'un |media_rtl| pour voir si on retrouve le même comportement:
+
+
+            .. |media_rtl| raw:: html
+
+               <a href="http://www.rtl.be/info/index.htm" target="_blank">média</a>
+
+            Combien avez-vous de sites tiers (triangles) reliés à ce site premier (rond) rtl.be ?
+        choices:
+        -   feedback: Faux, recomptez combien il y a de sites tiers (triangles) reliés
+                au site premier (rond) "rtl.be"
+            text: '1'
+        -   feedback: Faux, recomptez combien il y a de sites tiers (triangles) reliés
+                au site premier (rond "rtl.be").
+            text: '5'
+        -   valid: true
+            text: Plus de 10
+            feedback: Bonne réponse, il y a effectivement plus de 10 sites tiers connectés
+                au site premier.
+        name: Et sur un site de média, comment ça se passe ?
+    '4':
+        choices:
+        -   feedback: Mauvaise réponse
+            text: Canada
+        -   text: Europe
+            valid: true
+            feedback: Bien
+        -   feedback: Mauvaise réponse
+            text: Etats-Unis
+        -   feedback: Mauvaise réponse
+            text: Afrique
+        success_message: Juste, les pages Internet du site de RTL-TVI  que vous consultez
+            sont bien fournies par un serveur qui se trouve en Europe.
+        limit: 0
+        header: |-
+            Où sont localisés les serveurs qui hébergent les sites Internet ?
+            Dans Lightbeam, cliquez sur le site premier "RTL.be" pour avoir l'information de la localisation (dans la colonne de droite au-dessus de la carte du monde).
+            Où est localisé le serveur qui héberge le site de RTL-TVI ?
+        name: Localisation du serveur de RTL-TVI
+        type: multiple_choice
+    '5':
+        choices:
+        -   feedback: Faux, regardez les différences provenances des sites tiers.
+            text: Tous les sites tiers sont hébergés en Belgique
+        -   text: Ce sont seulement des sites hébergés en Europe
+            feedback: Faux, regardez les différences provenances des sites tiers.
+        -   feedback: Bravo
+            valid: true
+            text: Il y a des sites tiers qui sont hébergés un peu partout dans le
+                monde (Europe, Canada, Etats-Unis...)
+        -   feedback: Faux, regardez les différences provenances des sites tiers.
+            text: Les sites tiers sont du même pays que le site premier.
+        success_message: Comme on l'a vu, le site de RTL-TVI fait appel à d'autres
+            sites (sites tiers). Ces sites peuvent être hébergés partout dans le monde,
+            les informations circulant sur Internet proviennent d'un peu partout,
+            sans être limitées aux frontières géographiques.
+        name: Localisation des serveurs impliqués à RTL-TVI
+        type: multiple_choice
+        limit: 0
+        header: |-
+            Déterminons la localisation des sites tiers, impliqués au fonctionnement de celui de RTL-TVI.
+
+            Pour ce faire, cliquez sur chaque site tiers (petit triangle). Si l'information n'est pas disponible, passez au site tiers suivant.
+    '6':
+        success_message: Exact, on retrouve souvent les mêmes sites tiers dans le
+            fonctionnement de plusieurs sites premiers. Ce sont bien souvent les mêmes
+            sites de statistiques, de réseaux sociaux etc qui sont impliqués dans
+            le fonctionnement des différents sites premiers.
+        choices:
+        -   text: Aucun site tiers en commun
+            feedback: Faux, regardez les triangles qui sont à la fois reliés au site
+                premier "RTL-TVI" et au site premier "7sur7.be"
+        -   text: Tous les sites tiers sont communs (reliés aux deux ronds)
+            feedback: Faux, regardez les triangles qui sont à la fois reliés au site
+                premier "RTL-TVI" et au site premier "7sur7.be". Est-ce que tous les
+                triangles sont ainsi reliés aux deux sites premiers ?
+        -   text: Une partie des sites tiers sont communs, à savoir Facebook, Twitter,
+                service de Google...
+            feedback: La réponse est correcte
+            valid: true
+        type: multiple_choice
+        header: |-
+            Existe-t-il des sites tiers (triangles) identiques pour plusieurs sites premiers (ronds, sites qu'on désire regarder) ?
+
+            Faisons le test en surfant sur le site Internet d'un autre |media_7s7|:
+
+            .. |media_7s7| raw:: html
+
+               <a href="http://www.7sur7.be/" target="_blank">média</a>
+
+            Y-a-t-il des sites tiers (triangles) qui relient à la fois rtl.be (rond - site premier) et 7sur7.be (rond - site premier) ?
+        name: Y-a-t-il des liens entre les sites qu'on visite ?
+        limit: 0
+    '7':
+        header: |
+            Nous avons observé des sites belges, qu'en est-il des sites étrangers ?
+
+            Ouvrons les sites Internet de |disney| et du |nytimes| et observons pendant 1 minute le développement du graph dans Lightbeam.
+
+            .. |disney| raw:: html
+
+               <a href="https://disneyworld.disney.go.com/" target="_blank">Disney</a>
+
+            .. |nytimes| raw:: html
+
+              <a href="http://www.nytimes.com/" target="_blank">New York Times</a>
+        choices:
+        -   text: Ils n'ont pas de sites tiers
+            feedback: Faux, regardez un peu mieux les sites tiers de ces deux sites
+                premiers.
+        -   text: Ils n'ont que très peu de sites tiers et n'ont aucun site tiers
+                en commun avec ceux des médias visités aux questions précédentes (7sur7
+                et rtl).
+            feedback: Faux, regardez un peu mieux les sites tiers de ces deux sites
+                premiers.
+        -   feedback: Juste.
+            valid: true
+            text: Ils ont également beaucoup de sites tiers et possèdent des sites
+                communs avec les médias visités (Google, Facebook, Twitter, etc)
+        success_message: On remarque que ces sites premiers sont également concernés
+            par les sites tiers. Ce sont très souvent les mêmes sites qui relient
+            les sites premiers.
+        name: Et les sites étrangers alors ?
+        limit: 0
+        type: multiple_choice
+    '8':
+        choices:
+        -   text: 1 site premier pour 1 site tier
+            feedback: Faux, regardez un peu mieux ce que vous dit Lightbeam
+        -   feedback: Faux, regardez un peu mieux ce que vous dit Lightbeam
+            text: 1 site premier pour 5 sites tiers
+        -   valid: true
+            feedback: Juste !
+            text: 1 site premier pour plus de 6 sites tiers
+        -   feedback: Faux, regardez un peu mieux ce que vous dit Lightbeam
+            text: 10 sites premiers pour 1 site tier
+        name: Conclusion
+        success_message: Bravo, il y a effectivement en moyenne 10 sites tiers par
+            site premier réellement visité. Pour chaque site visité volontairement
+            nous donnons des informations nous concernant SANS le savoir et SANS donner
+            notre accord à 10 sites tiers... étonnant, non ?
+        type: multiple_choice
+        limit: 0
+        header: |+
+            Au cours de cette expérience sur les sites impliqués dans les sites principaux, nous avons découvert que:
+
+            - lorsqu'on visite un site Internet, ce site fait appel à plusieurs autres sites (sites tiers) sans qu'on s'en aperçoive.
+
+            - quasi tous les sites premiers d'Internet, utilisent des sites tiers pour avoir une meilleure visibilité (ex: réseaux sociaux), pour obtenir des statistiques sur les visiteurs de leur site et ce, peu importe le pays d'origine du site visité.
+
+            - la grande majorité des sites sont reliés entre eux par certains sites tiers qui reçoivent/collectent des informations nous concernant.
+
+            Dernière question à propos des sites tiers:
+
+            - Quelle est la proportion de sites premiers visités en comparaison avec le nombre de sites tiers ? Regardez le nombre de sites premiers visités dans Lightbeam (YOU HAVE VISITED XX SITEs) et le nombre de sites tiers (YOU HAVE CONNECTED WITH XX THIRD PARTY SITEs)
+
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+tags: {}
+weight: 1.0

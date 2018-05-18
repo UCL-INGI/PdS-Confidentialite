@@ -1,0 +1,107 @@
+accessible: true
+author: Ludovic
+context: |-
+    Dans cette tâche nous allons vous laisser taper un mot de passe pour voir la force de ce dernier et déterminer si c'est un mot de passe compliqué à deviner/cracker ou non.
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon VERT**
+
+    ----
+
+    **Vous avez 5 minutes pour accomplir cette tâche.**
+environment: default
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Créer son mot de passe (au choix)
+network_grading: false
+order: 2
+problems:
+    pass:
+        name: Mot de passe - version 1
+        type: code_single_line
+        header: |-
+            1) Voici les 10 pires mots de passe de 2016:
+
+            - 123456
+            - 123456789
+            - qwerty
+            - 12345678
+            - 111111
+            - 1234567890
+            - 1234567
+            - password
+            - 123123
+            - 987654321
+
+            2) Prenez un mot du dictionnaire d'au moins 8 caractères (football par exemple) et effectuez les manipulations suivantes :
+                a) Remplacez un caractère par sa majuscule. Pour football, nous remplaçons le ``t`` par un ``T``. Ceci donne ``fooTball``. C'est facile à retenir car la majuscule est sur le "t" qui se trouve au milieu du mot.
+                b) Remplacez ensuite un caractère par un chiffre. Avec ``football``, vous pourriez ajouter un ``0`` à la place du ``o``, c'est facile à retenir car le o et le 0 font plus ou moins la même forme. Ceci donne le mot de passe suivant : ``f00Tball``.
+                c) Remplacez enfin un caractère par un caractère spécial, par exemple remplacer un ``a`` par un ``@``. Ceci donne : ``f00Tb@ll``
+
+                Vous pouvez aussi ajouter d'autres caractères spéciaux tels que le . , le #,  le €,... Ceci rend votre mot de passe plus complexe à trouver.
+
+            Ainsi le mot ``football`` devient ``f00Tb@ll``. Essayez maintenant avec votre mot du dictionnaire.
+
+
+            3) Insérez votre mot de passe et constatez votre résultat. Améliorez-vous si besoin
+    pass2:
+        name: Password - Version de Bruce Schneier
+        type: match
+        header: |-
+            La version précédente est un système très courant. Cela s'appelle le langage Warez. Le problème de ce dernier est qu'il est trop connu et que la plupart des crackers de mots de passe utilisent des algorithmes basés sur différents dictionnaires dans différentes langues et qu'ils sont entraînés à remplacer les caractères par des majuscules ou par des caractères spéciaux.
+            Nous allons donc voir maintenant la version du célèbre cryptographe et expert en sécurité `Bruce Schneier <https://www.schneier.com/>`_. Ce dernier part d'une phrase, récupère la première lettre de chaque mot pour ensuite refaire ce que nous avons fait au premier point.
+
+            Par exemple : "j'aime le foot et le basket" sera transformé en ``j@LfElB``.
+
+            Faites un essai avec la phrase suivante : ``Il fait beau en ce lundi matin``.
+            Consignes:
+
+            - Prenez la première lettre de chaque mot (7 lettres au total)
+            - Commencez par une minuscule
+            - Mettez le/les f en majuscule
+            - Remplacez le e par 3 et le l par ! (point d'exclamation)(Majuscule et minuscule compris).
+
+            Notez bien qu'il s'agit ici d'un exemple. Un mot de passe de 7 caractères est relativement léger. Pour un mot de passe robuste, prenez un mot d'au moins 11 caractères.
+        answer: iFb3c!m
+    pass3:
+        header: |-
+            On se rend bien compte qu'outre le fait que la version 2 améliore un peu la sécurité de votre mot de passe, elle n'est pas meilleure. En effet, on a obtenu un mot qui ne veut rien dire (les premières lettres des mots ont été concaténées pour créer un seul mot) ou pire encore cela pourrait former un mot existant si les initiales forment un mot du dictionnaire. Du coup retour au point de départ.
+
+            Une solution simple pour l'être humain à retenir et hyper compliquée à trouver est simplement que votre mot de passe soit une phrase. Plus précisément une phrase à base de mots aléatoires. Elle n'aura aucun sens mais avec un petit moyen mnémotechnique l'utilisateur s'en souviendra facilement.
+
+            De plus, les gestionnaires de mots de passe modernes utilisant l'encryption forte permettent, au moyen d'un bon mot de passe, de retenir pour vous ces différentes combinaisons de mots. Un mot de passe fort pour protéger et retenir tous vos autres mots de passe.
+
+            Prenez 4 mots au hasard (séparés par des espaces) et insérez ici votre résultat
+        type: code_single_line
+        name: version 3 - Simple mais efficace
+    pass3b:
+        type: code_single_line
+        name: Créons le mot de passe sur base de ces mots
+        header: |-
+            **Ré-utilisez vos mots de la question 3.**
+
+
+            Mettez les mots dans un ordre qui pourrait vous permettre de les retenir simplement et séparer-les par un des caractères suivants: # ,/.-;
+            Par exemple :
+
+            mes mots sont: vache chocolat pile travers.
+
+            Je pense à un cornet de glace où les boules sont des vaches brunes et le cornet est à l'horizontale.
+
+            Je mets les mots dans le bon ordre et je les sépare par un # :
+
+            pile#chocolat#vache#travers
+
+            A votre tour !
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+tags: {}
+weight: 1.0

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+IPADDR=$(getinput dns-ter)
+if dig @8.8.8.8 | grep -q facebook.com; then
+  
+else
+fi

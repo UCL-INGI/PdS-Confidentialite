@@ -1,0 +1,134 @@
+accessible: true
+author: Ludovic
+context: |-
+    Pour cette tâche vous aurez besoin d'utiliser Firefox.
+
+    Qu'est-ce qu'un Referer?
+
+    Lorsque l'on visite un site web, certains éléments du site permettent d'envoyer des informations sur votre navigation à d'autres serveurs extérieurs au site que vous visitez.
+
+    Un Referer est une information transmise à un serveur HTTP lorsqu'un visiteur suit un lien pour accéder à l'une de ses ressources, lui indiquant l'URL de la page où se situe ce lien qu'il a suivi. Cela permet à un site de reconstruire l'historique de votre navigation.  Il peut savoir où vous êtes allés avant d'arriver chez lui.
+
+    Ce mécanisme est illustré dans la figure suivante :
+
+    .. image:: referers/image-pub-referer-wikipedia.png
+        :width: 100%
+
+    On peut voir en (1) un requête vers la page `Référant <https://fr.wikipedia.org/wiki/Référant>`_. Si l'utilisateur accède ensuite à la page de `discussion <https://fr.wikipedia.org/wiki/Discussion:Référant>`_ en suivant le lien au dessus du texte, son navigateur fera une seconde requête en indiquant comme valeur de ``Referrer`` l'adresse de la page où se situait le lien suivit : ici, la page `Référant <https://fr.wikipedia.org/wiki/Référant>`_.
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon JAUNE.**
+
+    ----
+
+    **Vous avez 5 minutes pour accomplir cette tâche.**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Referers et images
+network_grading: false
+order: 7
+problems:
+    task1:
+        type: match
+        name: Quel est votre referer?
+        answer: 'https://inginious.info.ucl.ac.be/course/printemps-sciences-confidentialite/referers '
+        header: |-
+            Suivez le lien suivant : https://www.whatismyreferer.com/
+
+
+            Quel Referer vous donne le site?
+    Solution:
+        type: match
+        answer: 'No referer / hidden '
+        header: |-
+            Cette technologie est bien utile. Par exemple, dans le cadre d'échanges publicitaires entre deux sites, l'analyse des Referers  permet au gestionnaire d'un site de savoir combien de visiteurs sont arrivés sur son site à partir de la publicité faite sur le site partenaire, et éventuellement de rémunérer ce dernier en conséquence.
+
+            Mais comme toute technologie, le Referer peut être exploité de manière possiblement préjudiciable à l'utilisateur... ou du moins, il existe des utilisateurs qui ont peur que ce soit le cas.
+
+            Tout d'abord, comme déjà vu, il permet de suivre la navigation d'un internaute sur un site... cela dit, si vous visitez le site, il est possible pour le webmaster de vous suivre, même sans Referer, puisque vous demandez de toute façon au serveur les pages que vous souhaitez visiter...
+
+            Ensuite, il peut y avoir des sites, ou des documents, que vous ne voulez pas voir transmis en Referer ; notamment, il peut paraitre compréhensible que vous ne souhaitiez pas voir apparaître en Referer l'adresse d'un document présent sur votre disque dur (tel, par exemple, une page d'un site que vous auriez enregistré pour la consulter hors-ligne, et sur laquelle vous auriez cliqué sur un lien), ou encore une adresse correspondant à un formulaire de paiement en ligne - afin de ne pas exposer votre arborescence de répertoires dans le premier cas, ou ne pas indiquer au webmaster d'un autre site que vous venez d'effectuer un achat en ligne (Celui-ci pourrait alors se dire que vous êtes un bon client potentiel, s'il est à la tête d'un site proposant des produits à la vente).
+            Cela dit, nous verrons au cours de notre sous-partie suivante que ceci n'est pas réellement un problème.
+
+            Pour nous protéger, que pouvons-nous faire...
+
+            1) Ouvrez un nouvel onglet et tapez about:config
+            2) Cliquez sur "I accept the risk!"
+            3) Dans la barre de recherche taper referer.
+            4) Changez la valeur de network.http.sendRefererHeader en double cliquant dessus. De base, elle devrait être à 2. Mettez-la à 0.
+            5) Retournez sur le lien: https://www.whatismyreferer.com/
+
+            6) Faites un refresh. Quel est votre nouveau résultat?
+        name: Ceci peut poser un problème
+    VisiteSiteSansADP:
+        name: Visitons quelques sites
+        choices:
+        -   text: '0'
+            feedback: Vous avez probablement un bloqueur de pub actif, pensez à le
+                désactiver pour comprendre mieux cet atelier.
+        -   feedback: Vous vous rendez compte que le simple site de la DH inclut un
+                ensemble de sites tiers via ces publicités. Plusieurs sites sont,
+                grâce à cela, intégrés dans votre navigation. De plus ils savent ce
+                que vous visitez (page de foot par exemple) et peuvent donc adapter
+                leur publicité (mise en évidence d'un pari pour une équipe de foot
+                pour un site de pari en ligne par exemple.)
+            valid: true
+            text: entre 0-10
+        -   feedback: Faudrait pas exagérer non plus :)
+            text: plus de 10
+        type: multiple_choice
+        limit: 0
+        header: |-
+            Un Referer pourrait simplement se cacher dans des bouts de site web qui sont inclus dans ceux que vous visitez...
+
+            .. image:: referers/image-pub-referer.png
+                :width: 70%
+
+            On peut voir en (1) qu'on fait une requête pour recevoir une page du site de la Dernière Heure, mais que cette page contient une image publicitaire située sur le serveur d'une régie publicitaire. En (2), le navigateur effectue donc une requête sur le site publicitaire pour récupérer l'image, en indiquant l'adresse du site d'où il vient dans le champ ``Referer``. Le site publicitaire donne évidemment l'image, mais prend note au passage d'une partie de notre itinéraire de navigation.
+
+            Regardons le site web de la dh : http://www.dhnet.be
+            Analysez le nombre d'images de publicité que vous voyez sur ce site:
+    VisiteSiteDocti:
+        type: multiple_choice
+        choices:
+        -   text: Elles n'en font rien.
+            feedback: C'est faux, sachez que chaque information est utile sur Internet.
+        -   text: Elles vous proposent de la pub ciblée
+            feedback: Effectivement, mais ce n'est pas la seule chose.
+        -   valid: true
+            text: Elles vous proposent de la pub ciblée et elles revendent vos données
+                de navigation
+            feedback: Effectivement, elles pourraient par exemple revendre vos informations
+                de navigation à un assureur qui pourrait refuser de vous assurez en
+                pensant (à tort) que vous avez un cancer. Elle économise donc de l'argent
+                en ne vous prenant pas à sa charge.
+        limit: 0
+        name: Visite de doctissimo pour un cancer
+        header: |-
+            .. image:: referers/image-pub-referer-doctissimo.png
+                :width: 100%
+
+            On a diagnostiqué un cancer à un membre de votre famille. Bien que la démarche ne soit pas la plus sûre en termes d'information, vous décidez de vous rendre sur le site doctissimo.fr pour vous renseigner. Ce site structure ses urls avec des mots compréhensibles par un être humain: http://www.doctissimo.fr/html/dossiers/cancer/cancer.htm
+            Sur cette page, on retrouve encore des publicités. Ces pubs sont gérées par des sociétés spécialisées qui mettent de la pub sur un site en échange d'argent. Grâce à votre visite sur le site de Doctissimo, elles savent que vous avez fait des recherches sur le cancer (c'est dans l'url).
+
+            .. image:: referers/image-pub-multiplereferers.png
+                :width: 70%
+
+
+            Sur les différents sites (dhnet,lesoir, facebook), les régies publicitaires ont placé de la pub sur chaque page.
+            On se rend compte grâce à ce schéma qu'une régie publicitaire ne se résume pas qu'à partager de la publicité, elle se permet grâce à vos visites sur vos sites préférés de retenir un historique complet de votre navigation. Cette information est importante, car elle permet, via la vente de ces données, de connaître vos points d'intérêts ainsi que vos soucis quotidiens.
+
+            Que pensez-vous qu'elles peuvent faire avec cette information?
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+tags: {}
+weight: 1.0

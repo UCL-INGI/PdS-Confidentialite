@@ -1,0 +1,276 @@
+accessible: true
+author: Nicolas Detienne
+context: |-
+    Nous allons à présent nous intéresser aux cookies.
+
+    - Qu'est-ce qu'un cookie ?
+
+    Un cookie est un fichier créé automatiquement dans votre ordinateur lorsque vous visitez un site Internet. C'est ce site Internet qui crée son/ses propre(s) cookie(s).
+
+    - A quoi sert un cookie ?
+
+    Lors qu'un site Internet place un cookie dans votre ordinateur, il rend possible votre identification lors de votre prochaine visite. Ceci permet de pouvoir, par exemple, personnaliser votre navigation en vous affichant la page web directement dans votre langue. Le cookie permet de faire beaucoup d'autres choses.
+
+    - De quoi est-il composé ?
+
+    Ce cookie peut être rempli de différentes informations, telles que la date de votre dernière connexion, le choix de votre langue, etc.
+
+    - Comment est-il généré ?
+
+    Prenons le schéma ci-dessous pour expliquer le processus. Pour consulter une page Internet de Wikipedia par exemple, le navigateur web de votre ordinateur effectue une requête sur le site Internet hébergeant la page voulue (1). Le site répond en demandant à votre navigateur la permission d'enregistrer dans votre ordinateur un ou plusieurs cookies et les installe dans votre ordinateur (2). Ces cookies, dont la période de validité est définie par le serveur web, sont ré-envoyés au site web à chaque fois qu'on effectue une requête sur le même nom de domaine (3). Votre ordinateur les reçoit à nouveau en retour à chaque connexion sur ce site, mais mis à jour par le serveur (4).
+
+    .. image:: 2/image_un_cookie.png
+       :width: 850px
+
+    Comme on le voit, l'ordinateur ne fait pas que recevoir la page Internet à afficher. Il reçoit des cookies s'il ne les a pas encore et il envoie les cookies au serveur web s'il est déjà en possession de ceux-ci afin que le serveur web dispose des informations s'y trouvant et qu'il mette à jour ces informations (expiration par exemple). Il y a donc bien un échange d'informations entre votre ordinateur et le serveur web.
+
+    Regardons ensemble plus en détail le contenu des cookies et penchons-nous sur les dérives possibles...
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon BLANC.**
+
+    ----
+
+    **Vous avez 5 minutes pour accomplir cette tâche.**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: Les cookies
+network_grading: false
+order: 8
+problems:
+    '1':
+        choices:
+        -   feedback: Faux, comptez bien le nombre de lignes du tableau.
+            text: Un seul cookie
+        -   text: Entre deux et cinq
+            feedback: Juste. Plus de deux cookies ont été créés par le site sciences.be
+                et enregistrés dans votre ordinateur.
+            valid: true
+        -   feedback: Faux, comptez bien le nombre de lignes du tableau.
+            text: Plus de 10
+        limit: 0
+        type: multiple_choice
+        name: ''
+        header: |-
+            Cliquez sur ce |lien| pour visiter le site du Printemps des Sciences et regardons combien de cookies ont été placés par ce site dans notre ordinateur.
+
+            .. |lien| raw:: html
+
+               <a href="http://www.sciences.be/" target="_blank">ce lien</a>
+
+            Pour ce faire, ouvrez le menu de votre navigateur ("Internet Explorer" ou Firefox") , cliquez sur "Preferences", puis sur "Privacy" (ou "Vie Privée") et ensuite sur "remove individual cookies" (ou "show cookies").
+
+            Encoder "sciences.be" dans la barre de recherche et vous obtiendrez la liste des cookies associés à ce site.
+
+            Chaque cookie est représenté par une ligne avec le nom du site (sciences.be) et le nom du cookie. Combien en voyez-vous ?
+    '2':
+        header: |-
+            Analysons à présent le contenu d'un cookie.
+
+            Le cookie ci-dessous provient de la connexion à un site de messagerie électronique.
+            Cette image reprend le contenu d'un cookie. La barre "Search" a permis de lister tous les cookies qui ont été créés par le site mail.uclouvain.be. Ensuite, nous avons le contenu du cookie sélectionné (en bleu).
+
+            .. image:: 2/cookies1.png
+
+            On y trouve différentes informations. Parmi celles-ci, il y a notamment:
+
+            - le nom du cookie qui nous renseigne souvent sur le contenu de celui-ci,
+            - son contenu (les informations réellement intéressantes pour le site qui a créé le cookie),
+            - l'URL du site visité et
+            - la date d'expiration du cookie.
+
+            Analysez ce cookie et retrouvez le nom du cookie, l'identifiant sous lequel l'utilisateur s'est connecté à sa messagerie électronique ainsi que la date d'expiration de ce cookie.
+        name: ''
+        choices:
+        -   valid: true
+            text: |-
+                Nom du cookie = logondata
+
+                Login = detienne
+
+                Validité = le 19 décembre 2016
+            feedback: Bravo, vous avez bien identifié les différentes informations
+                présentes dans ce cookie
+        -   feedback: Faux, la ligne Login contient deux informations, séparées par
+                un signe "&". Quel est le login ?
+            text: |-
+                Nom du cookie = logondata
+
+                Login = acc=0&lgn=detienne
+
+                Validité = le 19 décembre 2016
+        -   text: |-
+                Nom du cookie = ClientId
+
+                Login = lgn=detienne
+
+                Validité = le 19 décembre 2016
+            feedback: Faux, le login se trouve derrière le signe "=". Quel est le
+                login ?
+        type: multiple_choice
+        limit: 0
+    '4':
+        choices:
+        -   valid: true
+            feedback: Juste, pour des raisons évidentes le choix de la langue est
+                possible (fr = français). Le pays est précisé car le contenu du site
+                peut varier selon le pays d'origine du visiteur (BE = Belgique). Prenons
+                l'exemple d'un site de vente en ligne, un visiteur pourrait choisir
+                sa langue et préciser son pays afin d'avoir accès uniquement à des
+                articles disponibles pour son pays et des descriptions dans sa langue
+                avec par exemple les unités de mesure (mètres/pieds, cm/inches, litres/gallons,
+                etc).
+            text: Comme le précise le nom du cookie (Guest Language ID) la langue
+                du visiteur du site est le français (fr) de Belgique (BE).
+        -   feedback: 'Faux, il n''est pas question de la nationalité du visiteur
+                mais de son choix de la langue et du pays dans lequel il se trouve. '
+            text: Le visiteur est Belge (BE).
+        -   text: Le visiteur s'est connecté depuis, soit la Belgique (BE) soit la
+                France (fr)... sans doute d'une région frontalière.
+            feedback: Faux, on trouve l'information concernant le pays dans lequel
+                il se trouve (BE=Belgique) et la langue (fr = français)
+        -   text: L'identifiant de la langue est fr_BE mais on ne sait rien en déduire.
+            feedback: Faux, il est possible d'en déduire que le visiteur du site a
+                choisi le français (fr) comme langue et la Belgique comme pays (BE).
+        name: ''
+        header: |
+            Quelle information peut-on trouver dans le cookie ci-dessous ?
+
+            .. image:: 2/cookies2.png
+        limit: 0
+        type: multiple_choice
+    '5':
+        choices:
+        -   feedback: Bien ! On trouve effectivement pas mal d'informations dans ce
+                cookie à propos de la localisation du visiteur ainsi que sur les caractéristiques
+                matérielles de son ordinateur.
+            valid: true
+            text: |-
+                Le visiteur est en Belgique, dans le Brabant Flamand.
+
+                Il utilise Firefox comme navigateur et son écran a une largeur de 1280 et une hauteur de 1024.
+        -   text: Le contenu du cookie n'est pas lisible par les humains, c'est incompréhensible.
+            feedback: Faux. Regardez un peu mieux les informations, il est possible
+                de "déchiffrer" certaines informations.
+        -   text: |-
+                Le code postal du visiteur est 3000.
+
+                Il utilise un ordinateur dont la version préférée est %22%3A%7B%22device
+            feedback: Faux, le code postal est juste mais la seconde partie de la
+                réponse est fausse.
+        limit: 0
+        header: |+
+            Analysez le contenu des deux cookies provenant d'un même site Internet.
+
+            Qu'apprenez-vous à propos du visiteur du site ?
+
+            Premier cookie:
+
+            - Name: GEOLOCATION_jar
+            - Content: %7B%22 **region** %22%3A%22 **vlaams+brabant** %22%2C%22 **country** %22%3A%22 **belgium** %22%2C%22 **zipCode** %22%3A **3000** %7D
+
+            Second cookie:
+
+            - Name: WDPROView
+            - Content: %7B%22 **version** %22%3A2%2C%22 **preferred** %22%3A%7B%22 **device** %22%3A%22 **desktop** %22%2C%22 **screenWidth** %22%3A **1280** %2C%22 **screenHeight** %22%3A **1024** %7D%2C%22 **deviceInfo** %22%3A%7B%22 **device** %22%3A%22 **desktop** %22%2C%22 **screenWidth** %22%3A **1280** %2C%22 **screenHeight** %22%3A **1024** %7D%2C%22 **browserInfo** %22%3A%7B%22 **agent** %22%3A%22 **Firefox** %22%2C%22 **version** %22%3A% **2248.0** %22%7D%7D
+
+
+        name: ''
+        type: multiple_choice
+    '6':
+        choices:
+        -   text: Tous les cookies sont importants, il faut les accepter car ils sont
+                essentiels au bon fonctionnement des sites que je visite.
+            feedback: Non, ils ne le sont pas tous !
+        -   text: On pourrait se passer des cookies dans tous les cas sans que ça
+                modifie notre navigation sur Internet (ils ne servent qu'aux gestionnaires
+                des sites Internet).
+            feedback: Non, ils sont parfois aussi utilisés pour améliorer la navigation
+                en mémorisant par exemple votre choix de langue.
+        -   valid: true
+            feedback: Juste, on peut éviter un grand nombre de cookies qui ne nous
+                apportent rien mais qui donnent des informations nous concernant (SANS
+                notre accord) aux différents sites/sociétés.
+            text: Certains cookies peuvent être bloqués (les cookies tiers par exemple)
+                sans que notre navigation ne soit perturbée (choix de la langue mémorisée).
+        type: multiple_choice
+        limit: 0
+        name: ''
+        header: |-
+            Le contenu des cookies peut ne pas être aussi clair pour des non initiés. Comme on l'a vu bon, nombre d'informations peuvent se trouver dans un cookie et ce n'est qu'une faible partie des possibilités qui vous ont été montrées ici.
+            Un grand nombre cookies possèdent des informations qui ne sont déchiffrables que par le site lui-même.
+
+            Les cookies ont plusieurs utilités:
+
+            - Cookie d'authentification. Une fois authentifié au site (à l'aide d'un login et mot de passe), le cookie placé par celui-ci permet de faire connaitre votre login au site durant votre navigation.
+
+            - Cookie de préférences. Il permet d'enregistrer vos préférences telles que le choix de la langue afin de ne plus vous poser la question lors des prochaines visites. De tels cookies permettent de ne pas vous re-demander, lors de visites ultérieures, de répondre à un sondage si vous l'avez déjà fait, etc...
+
+            - Cookie de renseignements. Ces cookies vont permettre de recueillir des informations sur la manière dont le site est visité. Ces informations peuvent permettre de savoir si le visiteur a navigué sur le site via un smartphone ou un ordinateur, via quel navigateur web (Firefox, Internet Explorer...), via quel site il arrivé sur le site (Referer), quelles pages du site il a visitées...
+
+            - Cookie publicitaire. Ces cookies sont placés, par les annonceurs, sur différents sites Internet. Si cet annonceur place une publicité sur plusieurs sites et que vous visitez plusieurs de ces sites, l'annonceur saura sur quels sites vous avez navigué. Il pourra, par exemple, ensuite vous fournir une publicité personnalisée en fonction de ce que vous avez récemment visité comme site possédant une de ses publicités. Ces cookies proviennent de sites tiers et non du site principal que vous visitez.
+
+
+            Que penser des cookies ?
+    '7':
+        choices:
+        -   feedback: En effet, il ne s'agit pas de virus, mais de fichiers créés
+                par les sites et contenant des informations nous concernant (langue,
+                type de navigateur, fréquence des visites, etc).
+            text: Non
+            valid: true
+        -   text: Oui
+            feedback: Faux, il ne s'agit pas de virus, mais de fichiers créés par
+                les sites et contenant des informations nous concernant (langue, type
+                de navigateur, fréquence des visites, etc).
+        header: Les cookies sont ils des virus ?
+        type: multiple_choice
+        name: ''
+        limit: 0
+    '8':
+        header: Les cookies sont-ils un danger pour le respect de la vie privée ?
+        choices:
+        -   valid: true
+            feedback: Juste
+            text: Oui, "grâce" aux cookies un annonceur peut connaitre la liste des
+                sites Internet que vous avez visités. Vous ne surfez donc pas de façon
+                anonyme, la vie privée n'est pas respectée dans ce cas.
+        -   text: Non, ma vie privée est toujours respectée sur Internet. Aucun cookie
+                n'a pour but de donner des informations sur moi et mes habitudes sur
+                Internet.
+            feedback: Faux, on l'a vu, les cookies peuvent permettre d'obtenir des
+                informations sur vos habitudes SANS vous en demander l'autorisation.
+        type: multiple_choice
+        limit: 0
+        name: ''
+    '9':
+        choices:
+        -   text: Bloquer tous les cookies
+        -   text: Autoriser tous les cookies (laisser la configuration par défaut)
+        -   valid: true
+            text: Bloquer uniquement les cookies tiers
+        name: ''
+        limit: 0
+        header: |-
+            La configuration de votre navigateur web (Firefox, Internet Explorer) permet de bloquer les cookies. Par défaut, il les autorise. Il y a deux façons de faire:
+
+            - Bloquer tous les cookies. Cette façon de faire, un peu radicale, interdit la sauvegarde de cookie sur votre ordinateur. On l'a vu, ceci implique que certains sites fonctionneront un peu moins bien (en présentant le même sondage à chaque connexion ou choix de la langue à chaque visite par exemple).
+
+            - Bloquer seulement les cookies tiers (ceux des annonceurs) et ceci sans perturber la navigation du site désiré.
+
+            Ces différents choix se trouvent dans la configuration de votre navigateur Internet, "Menu" --> "Preferences" --> "Privacy".
+
+
+            Sachant que le navigateur de votre ordinateur personnel et de votre smartphone/tablette autorise par défaut tous les cookies, vous allez à présent:
+        type: multiple_choice
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

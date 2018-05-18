@@ -1,0 +1,91 @@
+accessible: true
+author: ''
+context: |-
+    Pendant longtemps, les ressources placées par les régies publicitaires et les sites trackers sont restées de simples images, souvent invisibles (une image 1x1 pixel transparente suffit), mais dernièrement, un nouvelle manière de procéder est apparue.
+
+    Eh oui, si vous allez sur ce site, pour l'afficher complètement, il faut télécharger cette image (même transparente), il faut donc faire une requête à la régie publicitaire!
+
+    ----
+
+    **Lorsque vous aurez 100% pour cette tâche, passer à la tâche intitulée « Les mouchards sur Internet / fonctionnement ».**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Les mouchards sur Internet / boutons sociaux
+network_grading: false
+order: 10
+problems:
+    '1':
+        choices:
+        -   feedback: '- **un ou deux ?** Comptez encore !'
+            text: 1 ou 2
+        -   feedback: '- **3 à 5 ?** Cherchez encore un peu...'
+            text: 3 à 5
+        -   valid: true
+            feedback: |-
+                - **Effectivement, il y des liens vers (au moins) 6 réseaux sociaux différents sur cette page :**
+
+                  - Facebook
+                  - Twitter
+                  - Google+
+                  - SnapChat
+                  - Whatsapp
+                  - Youtube
+            text: 6 à 8
+        -   text: plus de 8
+            feedback: '- **plus de 8 ?** Ca semble vraiment beaucoup ! Certains réseaux
+                sociaux ont plusieurs liens sur cette page, mais on n''en compte qu''un
+                seul par site.'
+        type: multiple_choice
+        limit: 0
+        header: |-
+            Pour cettet tâche, vous pouvez continuer sur votre navigateur de départ.
+
+            Examinons le site http://fr.newsmonkey.be/
+
+            C'est un site plutôt branché sur les réseaux sociaux. **Pour combien de réseaux sociaux différents peut-on trouver au moins un lien sur la page d'accueil ?**
+        name: Des liens et des boutons
+    2bis:
+        name: 'Les boutons sociaux '
+        choices:
+        -   feedback: '- Si si, il y a une différence importante avec les liens habituels.
+                Cherchez encore !'
+            text: Il n'y a aucune différence
+        -   feedback: '- **une image et du texte ?** C''est exact, mais un lien normal
+                peut aussi contenir ces deux éléments. Cherchez encore.'
+            text: Il y a une image plus du texte
+        -   valid: true
+            text: Il y a une mise à jour automatique du texte
+        limit: 0
+        header: |
+            Parmi tous les liens vers des réseaux sociaux que nous avons trouvés sur ce site, certains sont de simples liens « inoffensifs », comme ceux rencontrés en bas de la page du site précédent et recopiés ci-dessous:
+
+            .. image:: InternetMouchards/simplesociallinks.png
+              :align: center
+
+            Bien sûr, si vous cliquez dessus, ces liens permettront à Facebook ou Twitter de savoir, par le mécanisme du **Referer** que nous avons vu plus tôt, sur quelle page vous vous trouviez et de connaître une partie de votre historique de navigation. Cependant, si vous n'y touchez pas, ces liens sont inactifs, on peut donc les considérer comme des « mouchards passifs ».
+
+            Par contre, au dessus de la page, vous pouvez voir qu'il s'agit d'autre chose :
+
+            .. image:: InternetMouchards/socialwidgets.png
+              :align: center
+
+            Quelle est la différence ?
+        success_message: |-
+            Le texte de ces liens indique **en direct** le nombre d'abonnés sur Twitter et le nombre de « J'aime » sur Facebook. Pour arriver à ce résultat, il faut **installer un petit programme dans votre navigateur**, qui va interroger les sites des réseaux sociaux afin de mettre à jour ces données.
+
+            Ces liens ne sont donc pas de simples liens, **ce sont des éléments actifs, comme des petites applications, dans la page web que vous visitez**.
+
+            Mieux encore, comme ils donnent des résultats en direct, c'est votre navigateur qui exécute ces éléments actifs : **ce sont des applications qui tournent donc directement sur votre machine !**
+
+            Et bien sûr, ces programmes ne se contentent pas de simplement compter les « j'aime » sur Facebook, ils peuvent directement servir à collecter des informations sur vous puisqu'ils s'exécutent dans votre navigateur : **ce sont les mouchards actifs, les plus invasifs**
+        type: multiple_choice
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

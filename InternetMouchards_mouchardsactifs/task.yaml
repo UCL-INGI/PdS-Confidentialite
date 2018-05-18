@@ -1,0 +1,87 @@
+accessible: true
+author: ''
+context: |-
+    Dispositifs d'espionnage uniquement
+    ***********************************
+
+    Les mouchards actifs sont les plus agressifs des mouchards implantés sur
+    le web. Contrairement aux images publicitaires ou aux cookies, dont on peut
+    faire un usage légitime sans chercher forcément à espionner les
+    internautes, les mouchards actifs ne servent spécifiquement qu'à rassembler
+    des informations sur nous, parfois « sous couverture », comme les boutons
+    sociaux que nous avons vu précédemment.
+
+    Ni vu, ni connu
+    ***************
+
+    Dans tous les cas, ces mouchards ne sont pas signalés aux visiteurs: ils
+    enregistrent donc leurs données sans le consentement de ceux-ci. Comme
+    l'utilisateur n'est pas censé en connaître l'existence, il ne leur est pas
+    proposé de refuser de faire fonctionner ces dispositifs ni de contrôler
+    les données récoltées, qui sont souvent situées hors du site visité.
+
+    Pensez par exemple aux boutons sociaux sur NewsMonkeys.be, les mouchards
+    sont sur le site, mais les données sont enregistrées respectivement chez
+    Facebook et Twitter.
+
+    En pratique, le fonctionnement de beaucoup de ces mouchards est d'ailleurs
+    mystérieux et nul ne sait exactement ni la nature exacte des données qu'ils
+    récoltent ni ce qu'ils en font.
+
+    Efficaces et difficiles à combattre
+    ************************************
+
+    Bien qu'ils ne constituent qu'une des nombreuses manières de récolter des
+    données sur notre activité en ligne, ils sont devenus tellement efficaces
+    et intrusifs qu'il est important d'en connaître l'existence et les moyens
+    de s'en protéger.
+    ----
+
+    **Lorsque vous aurez 100% pour cette tâche, passer à la tâche intitulée « Les mouchards sur Internet / notion d'empreinte ».**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Les mouchards sur Internet / fonctionnement
+network_grading: false
+order: 11
+problems:
+    '3':
+        choices:
+        -   text: Ces programmes utilisent mon navigateur pour récupérer mes données
+                personnelles sur mon disque dur (nom, prénom, adresse, numéro de carte
+                de crédit, etc.), afin de m'identifier
+            feedback: '- **Les mouchards ne récupèrent généralement pas les données
+                personnelles à l''insu des utilisateurs**, auquel cas ils devraient
+                contourner les mesures de sécurité qui sont mises en place par le
+                navigateur et ils seraient illégaux dans de nombreux pays.'
+        -   text: Ces programmes installent secrètement sur mon disque dur une application
+                cachée qui permet de récolter mes données personnelles (nom, prénom,
+                adresse, numéro de carte de crédit, etc.), afin de m'identifier
+            feedback: '- **Les mouchards n''ont pas facilement accès au disque dur
+                de la machine en raison des mesures de sécurité mises en place par
+                les navigateurs.** A priori, sans exploiter une faille de sécurité
+                (ce qui est illégal dans de nombreux pays), ils ne peuvent donc pas
+                installer une application sans la participation des utilisateurs,
+                ce qui serait plus proche du fonctionnement d''un virus informatique'
+        -   valid: true
+            text: Ces programmes utilisent toutes les données qu'ils peuvent récolter
+                dans mon seul navigateur afin de m'identifier
+        limit: 0
+        name: Et comment fonctionnent-ils ?
+        type: multiple_choice
+        success_message: |-
+            En effet, a priori, **les mouchards se contentent de récolter toutes les données disponibles à l'intérieur du navigateur pour identifier l'utilisateur.**
+
+            Les mouchards respectent donc le modèle de sécurité du navigateur: ils n'essayent pas d'outrepasser leurs droits ou de cracker la machine pour voler des données personnelles. Ils utilisent plutôt diverses méthodes pour recueillir une grande quantité de données spécifiques à votre navigateur afin de composer ce qu'on appelle **une empreinte** et vous identifier grâce à celle-ci.
+        header: Voici 3 hypothèses concernant le mode de fonctionnement de ces dispositifs,
+            réfléchissez bien et sélectionnez celle des trois qui vous semble la plus
+            probable.
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

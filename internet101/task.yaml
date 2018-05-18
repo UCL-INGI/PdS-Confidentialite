@@ -1,0 +1,221 @@
+accessible: true
+author: ''
+context: |-
+    Bien que nous ayons de plus en plus le sentiment d'être constamment en contact avec «Internet», la connaissance de ce qu'est **effectivement** Internet reste souvent assez approximative. Voyons voir ce qu'il en est pour vous.
+
+    Nous allons examiner certaines propositions faites autour d'Internet et essayer de voir dans quelles mesures elles reflètent la réalité.
+
+    Lisez bien les commentaires des réponses, ils vous expliqueront pas mal de choses sur le fonctionnement d'Internet.
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon ROUGE**
+
+    ----
+
+    **Vous avez 5 minutes pour accomplir cette tâche.**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Le BA-BA d'Internet et du Web
+network_grading: false
+order: 0
+problems:
+    prop1:
+        success_message: '**Les techniciens de Proximus ne peuvent pas installer Internet
+            sur votre ordinateur car Internet n''est pas un logiciel**, cela ne peut
+            donc pas être installé sur un ordinateur. Par contre, il est possible
+            d''installer des programmes qui permettent d''utiliser une connexion à
+            Internet afin de parcourir des pages web par exemple (comme Firefox ou
+            Google Chrome, il s''agit de navigateurs web), ou de relever ses emails
+            (comme Thunderbird).'
+        name: C'est quoi «Internet» ?
+        type: multiple_choice
+        choices:
+        -   text: oui
+        -   valid: true
+            text: non
+        limit: 0
+        header: |-
+            Commençons par ceci, entendu dans le train : **«Les techniciens de Proximus ont installé Internet sur l'ordinateur de ma grand-mère»**
+
+            Cette proposition est-elle correcte ?
+        error_message: '**Les techniciens de Proximus ne peuvent pas installer Internet
+            sur votre ordinateur, car Internet n''est pas un logiciel**, cela ne peut
+            donc pas être installé sur un ordinateur. Par contre, il est possible
+            d''installer des programmes qui permettent d''utiliser une connexion à
+            Internet afin de parcourir des pages web par exemple (comme Firefox ou
+            Google Chrome, il s''agit de navigateurs web), ou de relever ses emails
+            (comme Thunderbird).'
+    prop2:
+        limit: 0
+        choices:
+        -   text: oui
+        -   valid: true
+            text: non
+        success_message: '**Internet n''est pas que Facebook !** Facebook est une
+            entreprise qui propose ses services essentiellement au travers d''**un
+            site web**. Ceci signifie bien sûr qu''il est indispensable de disposer
+            d''une connexion à Internet (et d''un navigateur web) pour pouvoir utiliser
+            les services de Facebook, mais Internet ne se limite certainement pas
+            à ce seul site.'
+        type: multiple_choice
+        error_message: '**Internet n''est pas que Facebook !** Facebook est une entreprise
+            qui propose ses services essentiellement au travers d''**un site web**.
+            Ceci signifie bien sûr qu''il est indispensable de disposer d''une connexion
+            à Internet (et d''un navigateur web) pour pouvoir utiliser les services
+            de Facebook, mais Internet ne se limite certainement pas à ce seul site.'
+        header: |-
+            Autre chose : **«Internet c'est quand je vais sur Facebook»**
+
+            Cette proposition est-elle correcte ?
+        name: ''
+    prop3:
+        success_message: '**Internet n''est pas un logiciel**, cela ne peut donc pas
+            être installé sur un ordinateur, ni être «lancé» à la manière d''une application.
+            Par contre, un programme comme Internet Explorer (dont l''icône est effectivement
+            un gros E bleu), ou son successeur Micro$oft Edge, sont des navigateurs
+            web, qui permettent d''utiliser une connexion à Internet afin de parcourir
+            des pages web par exemple (tout comme Firefox ou Google Chrome).'
+        choices:
+        -   text: oui
+        -   text: non
+            valid: true
+        error_message: '**Internet n''est pas un logiciel**, cela ne peut donc pas
+            être installé sur un ordinateur, ni être «lancé» à la manière d''une application.
+            Par contre, un programme comme Internet Explorer (dont l''icône est effectivement
+            un gros E bleu), ou son successeur Micro$oft Edge, sont des navigateurs
+            web, qui permettent d''utiliser une connexion à Internet afin de parcourir
+            des pages web par exemple (tout comme Firefox ou Google Chrome).'
+        header: |-
+            Voyons ceci : **«Internet c'est le truc qui se lance lorsqu'on clique sur le gros E bleu dans le menu de Window$»**
+
+            Cette proposition est-elle correcte ?
+        type: multiple_choice
+        name: ''
+        limit: 0
+    prop4:
+        choices:
+        -   text: oui
+            valid: true
+        -   text: non
+        type: multiple_choice
+        success_message: |-
+            **Internet, ce n'est effectivement que des ordinateurs connectés entre eux.** Internet est constitué d'un ensemble de machines interconnectées qui communiquent numériquement entre elles en utilisant divers protocoles (un protocole est constitué d'un ensemble de règles indiquant comment communiquer), que l'on regoupe généralement sous l'appellation TCP/IP. Ceci permet à toutes ces machines de **transmettre des messages** d'un point à l'autre à travers le réseau, ce qui est le service essentiel offert par Internet.
+
+            Par exemple, un de ces messages peut être la demande de visualiser la page web de Facebook. Ce message, partant de votre ordinateur, sera acheminé automatiquement vers un des multiples serveurs (un gros ordinateur spécialisé) de la société Facebook. C'est ce serveur qui répondra alors par un autre message, constitué du contenu de cette page, et destiné à votre machine.
+
+            Internet, c'est donc juste ça : **des ordinateurs interconnectés et des protocoles pour faire circuler des messages.**
+
+            Si vous disposez d'une **connexion à Internet** fonctionnelle, ça signifie que votre machine est reliée à tous ces ordinateurs en un point du réseau et qu'elle capable de comprendre et d'utiliser les protocoles TCP/IP.
+        limit: 0
+        name: ''
+        error_message: |-
+            **Internet, ce n'est effectivement que des ordinateurs connectés entre-eux.** Internet est constitué d'un ensemble de machines interconnectées qui communiquent numériquement entre elles en utilisant divers protocoles (un protocole est constitué d'un ensemble de règles indiquant comment communiquer), que l'on regoupe généralement sous l'appellation TCP/IP. Ceci permet à toutes ces machines de **transmettre des messages** d'un point à l'autre à travers le réseau, ce qui est le service essentiel offert par Internet.
+
+            Par exemple, un de ces messages peut être la demande de visualiser la page web de Facebook. Ce message, partant de votre ordinateur, sera acheminé automatiquement vers un des multiples serveurs (un gros ordinateur spécialisé) de la société Facebook. C'est ce serveur qui répondra alors par un autre message, constitué du contenu de cette page, et destiné à votre machine.
+
+            Internet, c'est donc juste ça : **des ordinateurs interconnectés et des protocoles pour faire circuler des messages.**
+
+            Si vous disposez d'une **connexion à Internet** fonctionnelle, ça signifie que votre machine est reliée à tous ces ordinateurs en un point du réseau et qu'elle capable de comprendre et d'utiliser les protocoles TCP/IP.
+        header: |-
+            Ou encore ceci : **«Internet, c'est des ordinateurs connectés entre eux»**
+
+            Cette proposition est-elle correcte ?
+    prop5:
+        choices:
+        -   text: oui
+        -   text: non
+            valid: true
+        type: multiple_choice
+        limit: 0
+        success_message: |-
+            **Internet n'est pas réellement contrôlé par le gouvernement des Étas-Unis.** Il est vrai qu'Internet est né aux États-Unis et que diverses organisations importantes pour le réseau y sont également basées. Il est également vrai que la plupart des ordinateurs qui constituent l'ossature d'Internet sont aussi situés aux USA.
+
+            Cependant, les organisations de gouvernance d'Internet sont totalement indépendantes du gouvernement des États-Unis et la toute grande majorité des ordinateurs qui composent Internet sont la propriété d'opérateurs privés. Le gouvernement américain ne peut donc pas «contrôler» Internet au sens strict. Par contre, les révélations d'Edward Snowden nous ont montré que ce même gouvernement met en oeuvre des moyens considérables pour intercepter et espionner tout type de communications transitant par le réseau, que cela concerne des citoyens américains ou pas.
+        name: ''
+        header: |-
+            Plus polémique : **«Internet est contrôlé par le gouvernement des États-Unis»**
+
+            Cette proposition est-elle correcte ?
+        error_message: |-
+            **Internet n'est pas réellement contrôlé par le gouvernement des États-Unis.** Il est vrai qu'Internet est né aux États-Unis et que diverses organisations importantes pour le réseau y sont également basées. Il est également vrai que la plupart des ordinateurs qui constituent l'ossature d'Internet sont aussi situés aux USA.
+
+            Cependant, les organisations de gouvernance d'Internet sont totalement indépendantes du gouvernement des États-Unis et la toute grande majorité des ordinateurs qui composent Internet sont la propriété d'opérateurs privés. Le gouvernement américain ne peut donc pas «contrôler» Internet au sens strict. Par contre, les révélations d'Edward Snowden nous ont montré que ce même gouvernement met en oeuvre des moyens considérables pour intercepter et espionner tout type de communications transitant par le réseau, que cela concerne des citoyens américains ou pas.
+    prop6:
+        choices:
+        -   text: oui
+        -   valid: true
+            text: non
+        success_message: |-
+            **Le Wifi n'est pas indispensable pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est-à-dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être de s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet. Cependant, ce n'est absolument pas la seule façon de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats), ou en utilisant une connexion data par la téléphonie mobile (avec un modem GPRS, 3G, 4G, 5G, ...) ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi !
+        limit: 0
+        name: ''
+        header: |-
+            Et ceci : **«Pour aller sur Internet, il faut le Wifi»**
+
+            Cette proposition est-elle correcte ?
+        type: multiple_choice
+        error_message: |-
+            **Le Wifi n'est pas indispensable pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est-à-dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être de s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet. Cependant, ce n'est absolument pas la seule façon de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats), ou en utilisant une connexion data par la téléphonie mobile (avec un modem GPRS, 3G, 4G, 5G, ...) ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi !
+    prop7:
+        type: multiple_choice
+        choices:
+        -   text: oui
+        -   valid: true
+            text: non
+        header: |-
+            Et cette proposition : **«Pour aller sur Internet, il faut la 4G»**
+
+            Cette proposition est-elle correcte ?
+        error_message: |-
+            **La 4G n'est pas indispensable pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est à dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être d'utiliser une connexion data par la téléphonie mobile avec un modem 4G (ou GPRS, Edge, 3G, 5G, ...).
+
+            Cependant, ce n'est absolument pas la seule façon de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats), ou s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi !
+        name: ''
+        limit: 0
+        success_message: |-
+            **La 4G n'est pas indispensable pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est à dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être d'utiliser une connexion data par la téléphonie mobile avec un modem 4G (ou GPRS, Edge, 3G, 5G, ...).
+
+            Cependant, ce n'est absolument pas la seule façon de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats), ou s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi !
+    prop8:
+        choices:
+        -   text: oui
+        -   valid: true
+            text: non
+        success_message: |-
+            **Ni le Wifi, ni la 4G ne sont pas indispensables pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est à dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être d'utiliser une connexion data par la téléphonie mobile avec un modem 4G (ou GPRS, Edge, 3G, 5G, ...), ou de s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet.
+
+            Cependant, ce ne sont absolument pas les seules façons de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats),  ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi ou de la 4G !
+        error_message: |-
+            **Ni le Wifi, ni la 4G ne sont pas indispensables pour se connecter à Internet.** Pour profiter des services disponibles en utilisant Internet, il faut se relier au réseau, c'est à dire établir une **connexion à Internet**. Cette connexion peut prendre beaucoup de formes, et l'une d'entre elles peut effectivement être d'utiliser une connexion data par la téléphonie mobile avec un modem 4G (ou GPRS, Edge, 3G, 5G, ...), ou de s'enregistrer sur un réseau wifi via une borne elle-même reliée à Internet.
+
+            Cependant, ce ne sont absolument pas les seules façons de procéder, si on dispose d'une interface adaptée, on peut également simplement se connecter par un câble (de divers formats),  ou encore via le système Bluetooth ou une connexion satellitaire.
+
+            Ce ne sont que là que quelques exemples : il y a donc de nombreuses façons de se connecter à Internet en plus du Wifi ou de la 4G !
+        limit: 0
+        name: ''
+        header: |-
+            Ou alors sous cette forme : **«Pour aller sur Internet, il faut le Wifi ou la 4G !»**
+
+            Cette proposition est-elle correcte ?
+        type: multiple_choice
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

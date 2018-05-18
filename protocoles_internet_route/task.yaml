@@ -1,0 +1,65 @@
+accessible: true
+author: ''
+context: |-
+    Pour transférer un message sur Internet, le protocole IP place
+    celui-ci dans une structure nommée **paquet IP**. Il s'agit
+    simplement d'une suite de données respectant certains principes
+    d'organisation. Ce "paquet" contient entre autres l'adresse de la
+    source du message, ainsi que l'adresse de la destination.
+
+    Cependant, comme pour une enveloppe envoyée par la poste, **le
+    paquet n'indique généralement pas comment le faire
+    parvenir à sa destination.**  Il n'y a pas de carte indiqué sur l'enveloppe!
+
+    Ce sont les machines interconnectées qui forment l'épine dorsale
+    d'Internet qui vont alors se passer le paquet de l'une à l'autre et
+    le faire arriver à bon port. On appelle ce processus le **routage**
+    : c'est la base du fonctionnement d'Internet, sans cela, rien ne
+    pourrait s'y passer.
+
+    Les paquets empruntent donc des **routes** composées d'une chaîne
+    de machines qui se passent les paquets les unes aux autres. On
+    appelle ces machines des **routeurs.**
+
+    ----
+
+    **Si vous avez 100% comme résultat pour TOUTES les tâches facultatives, vous pouvez aller chercher un ballon ORANGE**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: (facultatif) Fonctionnement d'Internet / afficher une route
+network_grading: false
+order: 4
+problems:
+    '4':
+        name: Quelle est ma route ?
+        type: match
+        answer: ucl.r1.lln.belnet.net
+        header: |
+            Connectez-vous sur le site suivant :
+
+            http://ping.eu/traceroute/
+
+            Dans le champ de texte tout au-dessus se trouve normalement indiquée votre adresse IP (en bleu). Copiez-là dans la fenêtre "IP address or host name".
+            Lorsque vous cliquez sur le bouton bleu marqué "Go", ce
+            site web va tenter d'établir **la route** utilisée par les paquets
+            IP pour aller de lui (donc depuis l'extérieur de l'UCL) vers votre
+            machine (à l'intérieur de l'UCL). Sur l'interface, vous allez
+            découvrir, de haut en bas, les noms des différentes machines qui
+            forment cette route, en partant du site web vers votre machine (qui
+            n'apparaît pas, mais qui serait tout en bas).
+
+            Recopiez le nom du premier routeur qui **n'appartient pas à l'UCL**
+            (son nom ne se termine pas par ``ucl.ac.be``) et qui transporterait
+            un paquet **issu de votre machine** :
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 1.0

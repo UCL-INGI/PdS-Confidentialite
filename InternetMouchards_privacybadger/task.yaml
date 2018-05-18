@@ -1,0 +1,114 @@
+accessible: true
+author: ''
+context: |-
+    Bien que, comme on l'a dit précédemment, il est très difficile d'empêcher
+    les mouchards de vous espionner, il existe plusieurs extensions à installer
+    dans votre navigateur pour vous protéger des mouchards. Certaines sont
+    efficaces, certaines sont complètement bidons.
+
+    Les plus intéressantes sont :
+
+    - AddBlock+ : https://adblockplus.org/
+
+      AddBlock+ est une extension destinée principalement à bloquer la
+      publicité, mais avec le temps, qui a intégré certaines fonctionnalités
+      permettant de protéger la vie privée. Si elle est très efficace pour
+      empêcher les publicités, elle l'est malheureusement moins pour garantir la
+      protection de votre vie privée. De plus, comme cette extension est
+      maintenant liée à une entreprise commerciale et offre aux publicitaires
+      de payer pour ne pas être bloqués par AddBlock+, on peut avoir des
+      craintes concernant les motivations des développeurs par rapport au
+      blocage des mouchards.
+    - Ghostery : https://www.ghostery.com/
+
+      Ghostery est une extension spécifiquement dédiée au blocage des mouchards
+      sur le web, qui dispose d'une très large base de données et est
+      généralement efficace. Cependant, elle est également développée par une
+      entreprise commerciale qui vend aux publicitaires les données récoltées
+      sur les mouchards bloqués.
+    - uBlock Origin : https://github.com/gorhill/uBlock
+    - Disconnect : https://disconnect.me/disconnect
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, et aux précédentes, vous pouvez aller chercher un ballon ROSE.**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Les mouchards sur Internet / Privacy Badger
+network_grading: false
+order: 13
+problems:
+    '5':
+        choices:
+        -   feedback: '- **un seul ?** Continuez à surfer sur d''autres sites commerciaux'
+            text: '1'
+        -   text: entre 2 et 4
+            feedback: '- **entre 2 et 4 ?** Ce n''est pas encore beaucoup, continuez
+                à surfer sur d''autres sites commerciaux'
+        -   text: 5 ou plus
+            valid: true
+            feedback: |-
+                - **Au delà de 5 ?** Privacy Badger commence a être suffisamment
+                  entraîné pour détecter et bloquer les mouchards les plus
+                  aggressifs.
+
+                  Au fil du temps, il s'améliorera progressivement.
+        name: Comment s'en protéger ?
+        type: multiple_choice
+        header: |-
+            Nous allons installer l'extension **Privacy Badger** qui est faite
+            par l'ONG **Electronic Frontier Fondation**. Pour l'installer,
+            retournez sur l'onglet avec le résultat du test d'empreinte, ou
+            rendez-vous directement sur cette page :
+
+            https://www.eff.org/PrivacyBadger
+
+            et cliquez pour installer l'extension.
+
+            .. image:: InternetMouchards/badger-stroke.png
+               :align: right
+               :width: 200px
+
+            Cette extension ne dispose pas d'une liste de mouchards à bloquer,
+            mais **s'adapte au fur et à mesure au comportement des éléments
+            chargés dans les pages que vous visitez.** Si, au cours du temps,
+            l'extension découvre qu'un élément est un mouchard, elle commencera à
+            le bloquer.
+
+            Pour lui apprendre, commencez par retourner sur la page de TF1 :
+            http://www.tf1.fr et notez les choses bloquées
+            par l'extension, en haut à droite :
+
+            .. image:: InternetMouchards/privacy_badger.png
+
+            Normalement, au départ, l'extension ne bloque rien.
+
+            Surfez maintenant sur divers sites commerciaux :
+
+            - https://www.nytimes.com/
+            - http://rtl.be
+            - http://www.reuters.com
+            - http://www.lemonde.fr/
+            - http://www.canalplus.fr/
+            - http://www.lesoir.be/
+            - http://www.france2.fr/
+
+            Normalement, au cours du temps, vous devriez constater que Privacy
+            Badger commence à bloquer de plus en plus d'éléments.
+
+            Si vous retournez sur la page de `TF1 <http://www.tf1.fr>`_, vous
+            devriez constater que maintenant, beaucoup plus de mouchards sont
+            bloqués par l'extension.
+
+            Combien exactement ?
+        limit: 0
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

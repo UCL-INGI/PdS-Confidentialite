@@ -1,0 +1,155 @@
+accessible: true
+author: ''
+context: |-
+    Vérifier son empreinte
+    **********************
+
+    Pour mieux comprendre comme fonctionnent les mouchards et
+    l'empreinte des navigateurs qu'ils construisent, l'ONG américaine
+    **Electronique Frontier Fondation** (EFF) a mis en place un site
+    web qui fonctionne exactement comme un mouchard, mais qui donne
+    accès aux informations récoltées.
+
+    Cliquez `ici <https://panopticlick.eff.org>`_ pour visiter cet
+    excellent outil, puis cliquez sur le gros bouton marqué "TEST ME".
+
+    Le test est très intensif et recharge plusieurs fois la page, ce
+    que les vrais mouchards ne font généralement pas pour ne pas vous
+    donner l'alerte.
+
+    Sur la page de résultats, vous découvrez un tableau qui précise :
+
+    - si votre navigateur vous protège des publicités qui vous
+      espionnent
+    - si votre navigateur vous protège des mouchards invisibles, les
+      plus intrusifs
+    - si votre navigateur accepte de ne pas bloquer les sites tiers qui
+      respectent la volonté des utilisateurs de ne pas être espionnés
+      (paramètre **Do Not Track**)
+    - si votre navigateur vous protège de la prise d'empreinte. Comme
+      il est très difficile *d'empêcher* la prise d'empreinte par les
+      mouchards, il s'agit ici plutôt de spécifier si votre navigateur
+      a une empreinte très spécifique ou pas.
+
+    Si vous disposez d'un smartphone ou d'une tablette, vous pouvez
+    faire le test sur votre appareil personnel également afin d'en
+    tester les protections (généralement très faibles).
+
+    Une intrusion difficile à éviter
+    *********************************
+
+    Une des difficultés posées par les mouchards est qu'ils utilisent
+    des fonctionnalités parfaitement légitimes, qui permettent d'accéder
+    à des informations souvent nécessaires aux sites web. C'est pourquoi
+    il est difficile de les bloquer, car on ne peut pas savoir a priori
+    si on a affaire à un mouchard ou à une page web respectueuse de
+    votre vie privée et qui a besoin de ces informations pour
+    fonctionner correctement.
+
+    Ainsi par exemple, chaque navigateur envoie aux serveurs web un
+    identifiant de programme et de version : qui dit quelque chose
+    comme "je suis FireFox, voici ma version, je tourne sur la
+    plateforme Windows de telle version et voici la version de mon
+    système de gestion de pages". Voici un exemple réel : ::
+
+      Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/56.0.2924.76 Safari/537.36
+
+    Ces informations sont souvent nécessaires aux pages web, car elles
+    leur permettent d'adapter la mise en forme de leur contenu afin
+    qu'il se présente bien pour l'utilisateur. Il est donc légitime de
+    les demander, mais elles donnent bien entendu un partie de votre «
+    identité numérique » aux mouchards.
+    ----
+
+    **Lorsque vous aurez 100% pour cette tâche, passer à la tâche intitulée « Les mouchards sur Internet / Privacy Badger ».**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Les mouchards sur Internet / notion d'empreinte
+network_grading: false
+order: 12
+problems:
+    '4':
+        header: |-
+            Parmi toutes les informations suivantes, sélectionnez toutes
+            celles qui vous semblent accessibles (et donc utilisables) par un
+            mouchard.
+        choices:
+        -   text: L'identification du navigateur
+            valid: true
+        -   text: La taille et la résolution de votre écran
+            valid: true
+        -   text: La langue utilisée dans l'interface utilisateur de votre système
+                (ex. français, anglais, etc.)
+            valid: true
+        -   text: La liste des polices de caractères installées sur votre machines
+                (ex. Times New Roman, Helvatica, Comic Sans MS, etc.)
+            valid: true
+        -   text: Le nombre de points de contact que votre écran supporte si c'est
+                un écran tactile (ce nombre étant 0 s'il ne l'est pas)
+            valid: true
+        -   valid: true
+            text: Si votre navigateur accepte les cookies ou pas
+        -   valid: true
+            text: La liste des extensions installées dans le navigateur (par exemple,
+                pour afficher des fichiers pdf, lire les animations en Flash, ou même
+                pour bloquer les mouchards)
+        -   valid: true
+            text: L'identification de votre système d'exploitation (Windows, MacOS,
+                Linux ou autre), ainsi que sa version spécifique (comme Windows 10)
+        -   text: Les performances de votre système pour le rendu 3D, directement
+                lié à la présence d'une carte hardware spécifique dans la machine
+                et à son support dans votre système.
+            valid: true
+        -   valid: true
+            text: Les capacités détaillées de votre navigateur à vous afficher diverses
+                informations multimedias (des graphiques, des animations, des applets
+                java, des vidéos, du streaming, etc.)
+        -   text: L'endroit approximatif où vous vous trouvez sur la planète, tel
+                que l'on peut le déduire de votre adresse IP
+            valid: true
+        -   valid: true
+            text: Le fuseau horaire dans lequel vous vous trouvez au moment où vous
+                accédez à la page
+        -   valid: true
+            text: Le fait que vous ayez installé (ou pas) des protections contre le
+                tracking dans votre navigateur. Par exemple via des extensions, ou
+                encore en activant le paramètre « Do Not Track » qui doit indiquer
+                aux publicitaires que vous ne souhaitez pas être traqué
+        limit: 0
+        name: Quelle empreinte ?
+        multiple: true
+        type: multiple_choice
+        success_message: |+
+            Toutes ces informations, et d'autres encore, sont accessibles
+            directement à toute application qui s'exécute dans votre
+            navigateur, et donc aussi récupérables par les mouchards !
+
+            **C'est l'ensemble de toutes ces informations qui constitue
+            l'empreinte de votre navigateur !**
+
+            **Comme il y a toujours bien une petite différence d'une personne à
+            l'autre dans l'une ou l'autre de ces catégories (une police de
+            caractères ou une extension installée en plus ou en moins par
+            exemple), les mouchards arrivent à identifier très précisément une
+            personne rien qu'en prenant l'empreinte de son navigateur.**
+
+            Lorsqu'on envisage un site comme Facebook, qui peut associer très
+            facilement l'empreinte du navigateur avec votre identité réelle
+            (puisque vous vous connectez sur Facebook), et qui dispose de
+            trackers installés partout dans le web, sur toutes les pages où il
+            y a un bouton « J'aime », on se rend compte que l'association des
+            mécanismes de **Referer**, **cookies** et **mouchards** lui donne
+            réellement le pouvoir de collecter des informations sur absolument
+            tout ce que nous faisons sur le web !
+
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

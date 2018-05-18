@@ -1,0 +1,92 @@
+accessible: true
+author: ''
+context: |-
+    Au cours de tâches précédentes, nous avons pu en apprendre plus sur diverses technologies fréquemment utilisées par les sites web et qui peuvent poser problème pour votre vie privée :
+
+    - les images des régies publicitaires intégrées dans vos pages web
+    - l'utilisation des Referers pour suivre votre historique de navigation
+    - les cookies de sites tiers
+
+    Cette tâche va nous montrer que les personnes et les organisations qui veulent réellement espionner vos habitudes sur le web utilisent des moyens encore plus sophistiqués pour y arriver. On les appelle généralement «des mouchards».
+
+    ----
+
+    **Lorsque vous aurez 100% pour cette tâche, passer à la tâche intitulée « Les mouchards sur Internet / boutons sociaux ».**
+
+    ----
+
+    **Vous avez 15 minutes pour accomplir ces 5 tâches qui concernent les mouchards.**
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: Les mouchards sur Internet
+network_grading: false
+order: 9
+problems:
+    '1':
+        choices:
+        -   feedback: '- **Si vous ne voyez effectivement qu''un seul cookie**, recommencez
+                la manoeuvre en désactivant le blocage des cookies tiers, pour l''illustration
+                du mécanisme.'
+            text: Un seul, celui de TF1
+        -   feedback: '- **Si vous ne voyez aucun cookie**, recommencez la manoeuvre
+                en désactivant le blocage des cookies, pour l''illustration du mécanisme.'
+            text: aucun
+        -   feedback: '- **Effectivement, le seul site de TF1 provoque l''enregistrement
+                de dizaines de nouveaux cookies**. En fait, pratiquement chacun des
+                partenaires commerciaux de la chaîne utilise son site web très visité
+                pour en apprendre un peu plus sur les centres d''intérêt des internautes,
+                et donc aussi sur vous.'
+            text: des dizaines
+            valid: true
+        type: multiple_choice
+        limit: 0
+        header: |-
+            Nous avons déjà vu que lorsqu'une régie publicitaire s'arrange, moyennant paiement, pour déposer une de ses images sur un site que vous visitez, votre navigateur va aller chercher cette image automatiquement et, si vous n'y prenez pas garde, indiquer précisément à la régie publiciaire sur quelle page vous vous trouviez grâce au mécanisme du ``Referer``.
+
+            Dans la tâche sur les cookies, nous avons vu que les sites web peuvent nous identifier en enregistrant des informations sur notre ordinateur :
+
+            - lors de n'importe quelle requête, un site web peut demander l'enregistrement d'un cookie,
+            - les cookies ont une durée de validité qui peut être très longue, elle est choisie par le site web qui crée le cookie,
+            - tant que le cookie est valide à chaque fois qu'on re-fera une requête sur le même nom de domaine que le site qui l'a créé, le  navigateur transmettra ce cookie au site.
+
+            C'est ce mécanisme qui lui permet de savoir qui nous sommes : il suffit d'enregistrer un identifiant unique, comme un numéro, pour chaque visiteur qui n'a pas encore de cookie !
+
+            Ainsi, les régies publicitaires peuvent non seulement connaître l'historique de navigation des gens, mais également savoir exactement à qui cet historique correspond. Regardez l'illustration suivante pour comprendre :
+
+            .. image:: InternetMouchards/image-pub-referers-cookies.png
+                      :width: 800px
+
+            Vérifions si ce mécanisme est effectivement utilisé sur les sites web régulièrement visités.
+
+            ----
+
+            Pour ce faire, lancez un autre navigateur « Firefox », dont l'icône, située sur le bureau, juste au dessus du logo d'INGInious.
+
+            Dans ce navigateur, nous allons supprimer tous les cookies de notre navigateur. Il faut aller dans les préférences et sélectionner « Vie Privée » et cliquer sur « supprimer des cookies spécifiques ».
+
+            .. image:: InternetMouchards/ff-pref-cookies.png
+                      :width: 800px
+
+            On obtient alors la liste des cookies et on peut cliquer sur « Tout supprimer ».
+
+            .. image:: InternetMouchards/ff-pref-cookies-delete.png
+                      :width: 800px
+
+            On obtient alors un navigateur vide de tout cookie. Vous pouvez fermer le dialogue de gestion des cookies, mais conservez ouvert l'onglet avec les préférences
+
+            **Visitons maintenant un site bien connu en vous rendant sur http://www.tf1.fr.**
+
+            Laissez la page se charger, puis retourner dans les préférences vérifier combien de cookies votre navigateur a maintenant enregistré.
+
+            Combien de cookies votre navigateur a-til enregistré avec la seule visite du site de TF1 ?
+        name: 'Premier type de mouchard : une image et un cookie'
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+weight: 1.0

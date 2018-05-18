@@ -1,0 +1,273 @@
+accessible: true
+author: Ludovic
+context: |-
+    Dans un monde où nous sommes de plus en plus connectés, il est parfois utile de se poser la question : "Ai-je une grande confiance dans le web?", "Y-a-t-il un risque à mettre sur Internet les informations que je suis sur le point de partager ?"
+    Ce petit quizz va vous permettre de comprendre les dangers du web.
+
+    ----
+
+    **Lorsque vous avez 100% pour cette tâche, vous pouvez aller chercher un ballon BLEU**
+
+    ----
+
+    **Vous avez 5 minutes pour accomplir cette tâche.**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Confiance dans le web (au choix)
+network_grading: false
+order: 1
+problems:
+    q1:
+        error_message: Aïe... Vous donnez la même combinaison login/mot de passe régulièrement,
+            c'est dangereux...
+        success_message: Ouf... Vous favorisez des logins et mots de passes différents
+            pour chaque système et c'est tant mieux.
+        choices:
+        -   feedback: Il n'est pas judicieux de faire cela. En effet, si quelqu'un
+                connait votre combinaison login/mot de passe, il pourra se connecter
+                à tous vos comptes (mail/facebook/sites divers...) et se faire passer
+                pour vous. Ceci est très dangereux.
+            text: Oui
+        -   feedback: Vous avez bien raison. Ceci permet de limiter l'accès à vos
+                autres comptes si un compte a été piraté.
+            text: Non
+            valid: true
+        name: Login et mot de passe
+        header: Lorsque vous vous inscrivez sur un site (réseau social, site de jeux,...)
+            est-ce que vous donnez toujours la même combinaison d'adresse mail/login
+            et de mot de passe?
+        type: multiple_choice
+        limit: 0
+    Conditions:
+        limit: 0
+        success_message: Vous lisez tout de même un minimum avant de valider un choix,
+            c'est bien.
+        type: multiple_choice
+        choices:
+        -   text: oui
+            feedback: 'Avez-vous parcouru le document en entier ? '
+        -   valid: true
+            text: non
+        -   text: Je ne comprends pas ce charabia
+            valid: true
+        error_message: Avez-vous vu que vous me devez 100€ maintenant ?
+        header: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pulvinar rutrum odio sit amet fringilla. Mauris posuere nisl vel turpis lacinia, quis lobortis diam semper. In pharetra nisl in nibh varius consectetur non ut orci. Vivamus vehicula condimentum nisl, malesuada mattis sem porttitor in. Ut in vulputate nibh. Praesent vel nunc aliquam, auctor augue sit amet, aliquet felis. Nulla id sapien tincidunt, condimentum turpis at, pellentesque sapien. Donec a accumsan metus. Aenean convallis tincidunt ex, quis elementum tellus gravida ut.
+
+            Pellentesque posuere tortor vel magna mollis aliquam. Duis imperdiet, lacus id faucibus lobortis, mi ex fringilla quam, non semper nisl justo a libero. La personne qui valide ces conditions me doit 100 €. Nulla a purus erat. Morbi varius ullamcorper vehicula. Integer eu cursus orci. Aenean faucibus lectus sed urna laoreet pellentesque. Fusce et arcu sit amet nisi commodo feugiat nec vitae mauris.
+
+            Vivamus cursus, enim et faucibus iaculis, nisi diam finibus tellus, non pellentesque velit neque at nunc. Mauris vehicula sollicitudin nunc. Sed elit lorem, hendrerit ac facilisis quis, suscipit malesuada ex. Heureusement, c'est une blague. Nulla facilisis elementum massa eu tincidunt. Suspendisse iaculis efficitur enim, eu elementum quam pulvinar vitae. Nunc venenatis ligula id orci luctus interdum. Aenean malesuada dapibus aliquam. Phasellus maximus condimentum nisi non tempus. Sed eleifend sollicitudin odio, ut fringilla metus interdum vel. Aliquam quis dapibus sem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque tristique in lacus vehicula varius. Curabitur nec ligula sapien. Praesent aliquet augue a bibendum finibus.
+
+            Ut id vehicula erat. Suspendisse in lacus ut dui bibendum tincidunt ut in velit. Praesent elit erat, porta at ullamcorper sed, feugiat sit amet nisi. Mauris massa ligula, vehicula nec accumsan non, ultricies vitae est. Integer malesuada dapibus tortor mattis blandit. Suspendisse egestas sollicitudin augue ut feugiat. Donec sodales arcu eget nunc molestie, ut scelerisque neque tristique. Quisque cursus mi mi. Donec eu ipsum vel augue tincidunt congue eget nec nibh. Proin orci libero, condimentum feugiat vestibulum eu, pellentesque ac ligula. Vestibulum turpis ex, interdum et purus ut, venenatis lobortis mauris. In congue vulputate turpis, quis luctus lorem. Cras id mauris eu nunc consectetur aliquam. Morbi mi lectus, cursus eget ullamcorper in, tempor eu ante. Suspendisse at orci imperdiet magna sagittis tempus ac in justo. Suspendisse nec pulvinar eros, ac finibus odio.
+
+            Praesent rhoncus finibus ligula, a varius tellus efficitur ut. Integer nec quam odio. Integer maximus gravida leo a tempor. Proin nec suscipit enim. Donec bibendum magna ligula, nec suscipit dui molestie sit amet. Pellentesque nec justo justo. Nam volutpat, tortor sit amet ornare lobortis, dolor lorem ultrices nulla, nec sollicitudin nibh ipsum eget arcu. Proin in turpis vitae urna tincidunt bibendum at sed lectus. Nullam euismod felis quis dolor laoreet interdum.
+        name: Acceptez-nos conditions générales
+    partage:
+        choices:
+        -   valid: true
+            text: Nom,Prénom,Mail
+            feedback: Donner votre nom et prénom peut être dangereux, mais beaucoup
+                de sites les demandent, cela reste donc justifié de les donner selon
+                l'application.
+        -   text: Mail
+            feedback: Il s'agit de la seule information qui risque peu de vous identifier.
+            valid: true
+        -   text: Rien
+            feedback: C'est encore le mieux mais ce n'est pas toujours possible.
+            valid: true
+        -   feedback: Vous risquez de recevoir beaucoup d'appels...
+            text: Nom,Prénom,Mail,Téléphone
+        -   feedback: Un parfait inconnu peut donc venir vous rendre visite. Il peut
+                aussi vous appeler régulièrement !!
+            text: Nom,Prénom,Mail,Téléphone,Adresse
+        -   text: Nom,Prénom,Mail,Téléphone,Adresse,Ecole,Boulot
+            feedback: On peut donc venir à la sortie pour vous suivre. Vous suivre
+                jusque chez vous et appeler vos parents !!
+        limit: 0
+        name: Qu'êtes-vous disposé à partager?
+        type: multiple_choice
+        header: 'Quels éléments de votre vie êtes-vous prêt à fournir en ligne? '
+    cliqueOuNon:
+        choices:
+        -   text: Vous cliquez
+            feedback: Quelle mauvaise idée... Dans la plupart des cas, il s'agit effectivement
+                d'une vidéo. Cependant, imaginons qu'un pirate ait pris l'identité
+                de votre ami et vous envoie un lien vers un virus... Vous voilà dans
+                un sacré problème.
+        -   text: Vous regardez l'URL indiquant où ce lien mène.(http://masuperVideo.exe)
+                Vous cliquez tout de même.
+            feedback: |-
+                Vous avez pris le bon réflexe, cependant vous avez tout de même cliqué et le lien mène vers un fichier exécutable (le .exe l'indique) qui pourrait être un virus ou un spyware et nullement une vidéo.
+                Très mauvaise idée!
+        -   text: Vous regardez l'URL où mène le lien (http://masuperVideo.exe) et
+                vous ne cliquez pas.
+            valid: true
+            feedback: 'Vous vous dites certainement : "Un .exe pour une vidéo?! Cela
+                me semble bizarre!" Voici un très bon réflexe!'
+        -   feedback: Ce n'est pas un mauvais choix, vous évitez un problème potentiel
+                et n'y perdez pas 10 min de votre vie.
+            valid: true
+            text: Encore une stupide vidéo... Autant ne même pas y prêter attention.
+        type: multiple_choice
+        name: Un copain vous envoie un lien
+        limit: 0
+        header: |-
+            Vous vous promenez sur le net lorsque Jérémy, votre meilleur copain, vous envoie un lien et en ajoutant qu'il s'agit d'une vidéo trop marrante.
+            Que faites-vous?
+    publiPhoto:
+        name: Publication d'une photo
+        choices:
+        -   feedback: Malheureusement vous n'êtes pas tout seul sur la photo... Cela
+                peut déranger le camarade, qui se mettait un doigt dans le nez sur
+                la photo, que sa copine voit cela.
+            text: Oui, sans me poser de question
+        -   feedback: C'est une bonne idée. Attention à bien configurer la confidentialité
+                cependant.
+            valid: true
+            text: Oui, mais je demande l'avis à mes copains d'abord.
+        -   text: Oui, un de mes camarades fait un geste obscène, ça va faire rire
+                tout le monde.
+            feedback: Cela peut choquer un de tes contacts.
+        -   valid: true
+            text: Oui mais je vais configurer la confidentialité, seuls mes camarades
+                verront la photo.
+            feedback: C'est la meilleure des décisions, mais n'oubliez pas de demander
+                l'autorisation à vos amis (ils sont sur la photo !).
+        type: multiple_choice
+        limit: 0
+        header: |-
+            J'ai une superbe photo avec mes 3 meilleurs amis lors de la sortie au zoo avec ma classe. Je voudrais la partager avec mes contacts... Je la publie?
+            Attention 2 réponses sont attendues.
+        multiple: true
+    InstallerLapp:
+        choices:
+        -   text: Vous téléchargez l'application sur votre site favoris de torrents.
+                Vous installez ensuite l'application avec le crack.
+            feedback: Mauvaise idée!!! Imaginez que le crack contienne un virus...
+                Votre ordinateur sera infecté et votre travail aussi... Une fois amené
+                à l'école, c'est l'entièreté des ordinateurs de l'école qui peuvent
+                contracter le virus. De plus, il s'agit de vol. C'est illégal! Vous
+                risquez la prison.
+        -   feedback: A court terme, c'est une solution viable... Cependant si votre
+                travail vous prend plusieurs mois, la version d'évaluation va expirer.
+                Ceci n'est donc pas tenable sur du long terme.
+            text: Vous utilisez la version d'évaluation
+        -   valid: true
+            feedback: Il s'agit d'une bonne démarche. Un programme libre de droits,
+                sera probablement gratuit et fera aussi bien l'affaire que d'autres
+                programmes. De plus, vous devriez pouvoir contenter les exigences
+                du professeur avec ce dernier.
+            text: Vous regardez pour un équivalent libre/gratuit
+        -   valid: true
+            text: Vous vous rendez à l'école
+            feedback: C'est plus embêtant, mais parfois ca vaut la peine. Vous serez
+                dans un environnement de travail optimal et vous aurez déjà tout à
+                votre disposition.
+        -   feedback: Vous ne savez pas d'où provient ce programme... C'est une mauvaise
+                idée.
+            text: Vous prenez le programme que votre copain vous a passé sur sa clé
+                usb.
+        name: Je télécharge et j'installe
+        limit: 0
+        header: Vous devez réaliser un travail pour l'école avec un programme que
+            le prof a acheté et installé dans les salles informatiques. Cependant
+            vous voudriez travailler depuis chez vous pour éviter de devoir vous déplacer
+            jusque là.
+        type: multiple_choice
+    ResoSocio:
+        choices:
+        -   feedback: Effectivement, mais cela laisse trop d'informations sur sa vie
+                privée.
+            text: Chouette, il passe de bonnes vacances.
+        -   valid: true
+            text: Il est fou de mettre cela en ligne. Tout le monde peut savoir que
+                sa maison est sans surveillance!
+            feedback: Vous avez raison! Il est dangereux de mettre trop d'informations
+                sur le net! Un voleur peut s'en rendre compte et visiter sa maison
+                sans problème.
+        name: Photo FriendBook
+        header: |-
+            Un copain vient de poster cette photo:
+
+            .. image:: task1/test.png
+
+            Qu'est-ce que cela devrait vous inspirez?
+        limit: 0
+        type: multiple_choice
+    SecuritePhoto:
+        choices:
+        -   feedback: Une photo avec vos enfants devrait rester privée, uniquement
+                visible à vos amis proches.
+            text: public,public,public,public
+        -   valid: true
+            feedback: Vous avez bien géré l'accessibilité de vos photos.
+            text: public,amis d'ami,ami,public
+        -   text: amis d'ami,ami,public,public
+            feedback: Une photo avec vos amis peut être partagée avec les amis de
+                vos amis.
+        -   text: ami,ami,ami,ami
+            feedback: Vous pouvez tout de même ouvrir la sécurité, Cependant il parait
+                correct de vouloir protéger ses photos.
+            valid: true
+        header: |-
+            Ci-dessous une série de photos, indiquez quelle sécurité mettriez-vous sur chaque photo (public,ami,amis de mes amis)?
+
+            1)
+
+            .. image:: task1/photo1.png
+                :width: 70%
+
+            2)
+
+            .. image:: task1/photo2.png
+                :width: 70%
+
+            3)
+
+            .. image:: task1/photo3.png
+                :width: 70%
+
+            4)
+
+            .. image:: task1/photo4.png
+                :width: 70%
+        name: Quelle sécurité mettre sur des photos sur FriendBook
+        limit: 0
+        type: multiple_choice
+    synthese:
+        choices:
+        -   valid: true
+            text: Méfiant, Internet c'est vraiment dangereux si l'on fait n'importe
+                quoi.
+        -   text: Confiant, Internet, je suis dessus tous les jours, je gère.
+            valid: true
+        -   text: Entre les deux. Je comprends les risques, mais je ne maîtrise pas
+                tout.
+            valid: true
+        name: Faisons le point
+        header: |-
+            Lors de cet atelier, nous avons découvert que:
+
+            - partager le même mot de passe entre différents comptes est dangereux
+            - Communiquer trop de données peut avoir un aspect néfaste sur sa vie privée.
+            - Accepter quelque chose sans le lire est une chose grave. Vous vous engagez à faire des choses que vous n'avez peut-être pas envie de faire.
+            - Ne pas demander l'autorisation d'autrui peut être problématique et peut engager des poursuites contre vous.
+            - Vous vous méfierez maintenant des liens qui peuvent être un virus ou autre.
+            - Vous vous rendez compte qu'on ne partage pas n'importe quoi en public.
+            - Vous avez appris à gérer le partage de différents types de photos. Vous comprenez quel public accède aux photos.
+
+            Comment vous sentez-vous maintenant par rapport à l'Internet?
+        limit: 0
+        type: multiple_choice
+stored_submissions: 0
+submission_limit:
+    amount: 3
+    period: -1
+tags: {}
+weight: 1.0

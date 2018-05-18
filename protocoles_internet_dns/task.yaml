@@ -1,0 +1,86 @@
+accessible: true
+author: ''
+context: |-
+    Ok, nous avons maintenant une bonne idée de la manière dont sont acheminés
+    les messages dans Internet. Il reste cependant bien des questions sans
+    réponse.
+
+    Par exemple, lorsque je veux aller sur Facebook, je dois communiquer avec
+    les machines qui font fonctionner ce service, mais je ne connais pas
+    l'adresse IP de Facebook : comment fait-on dans ce cas ?
+
+    Une partie de la réponse est celle-ci : Facebook utilise un **nom de
+    domaine** qui est ``facebook.com``. En connaissant ce nom de domaine, parce
+    que vous le tapez dans la barre d'adresse de votre navigateur par exemple,
+    votre ordinateur peut "deviner" quelle est l'adresse IP à contacter, mais
+    comment ?
+
+    ----
+
+    **Si vous avez 100% comme résultat pour TOUTES les tâches facultatives, vous pouvez aller chercher un ballon ORANGE**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: (facultatif) Fonctionnement d'Internet / DNS
+network_grading: false
+order: 5
+problems:
+    dns:
+        header: Parmi les propositions suivantes, sélectionner celle(s) qui vous paraissent
+            les plus vraisemblables.
+        choices:
+        -   feedback: |-
+                - L'idée d'enregister toutes les adresses IP de l'Internet sur chaque ordinateur connecté n'est pas bête du tout, et elle a même été utilisée en pratique, au tout début de l'existence du réseau.
+
+                  Cependant, il y a aujourd'hui beaucoup trop d'adresses IP utilisées pour qu'on puisse les stocker sur chaque machine. Souvenez-vous, rien que IPv4 représentent plus de 4 milliards d'adresses et IPv6 en comporte des milliards de fois plus. Ce sont des quantités astronomiques, on ne peut donc plus compter sur une solution de ce genre pour associer les adresses IP et les noms de domaines.
+            text: Votre ordinateur contient une espèce de base de données où sont
+                renseignées toutes les adresses IP de l'Internet et leurs noms de
+                domaines; il peut ainsi savoir comment contacter Facebook.
+        -   text: On peut connaître l'adresse IP de Facebook en se connectant au site
+                web ``whatismyip.com`` qu'on a utilisé tout à l'heure et c'est ce
+                que votre ordinateur fait.
+            feedback: |-
+                - Effectivement, l'idée générale est que les ordinateurs connectés à Internet interrogent des machines spécialisées dans la correspondance entre adresses IP et nom de domaines.
+
+                  Cependant, il y a aujourd'hui beaucoup trop d'adresses IP utilisées pour qu'on puisse imaginer les administrer avec une seule machine. Souvenez-vous, rien que IPv4 représentent plus de 4 milliards d'adresses et IPv6 en comporte des milliards de fois plus : ce sont des quantités astronomiques.
+
+                  De plus, si une seule machine, comme le site web ``whatismyip.com``, était chargée de rendre ce service pour tout l'internet, plus rien de fonctionnerait si jamais cette machine venait à avoir un problème comme une coupure de courant. Avec des milliards de machines dépendantes de ce service, ce n'est pas une solution envisageable.
+        -   valid: true
+            text: Mon ordinateur connait l'adresse IP d'une machine dans l'Internet
+                qui sait comment traduire les noms de domaines en adresses IP et interroge
+                cette machine pour traduire ``facebook.com`` en adresse IP
+        success_message: |-
+            En effet, pour pouvoir se contacter en ne connaissant que leurs **noms de domaines**, les ordinateurs connectés à l'Internet **doivent obligatoirement** connaître l'adresse IP d'une machine spécialisée dans la traduction des noms de domaines en adresses IP.
+
+            Ces machines spécialisées sont appelées **serveurs DNS** (pour Domain Name Service). Il y a des centaines de milliers de serveurs DNS dans l'Internet, qui se **répartissent entre eux la charge de répondre à toutes les machines connectées**. C'est donc un service **distribués** et fondamental pour que le réseau fonctionne. Bien qu'il soient très nombreux, les serveurs DNS sont fréquemment attaqués par des hackers et les conséquences sont terribles pour les personnes connectées. Ce sont donc des machines particulièrement surveillées.
+        name: Connaître son nom ?
+        limit: 0
+        type: multiple_choice
+    dns-bis:
+        type: match
+        name: Et mon nom de domaine alors ?
+        answer: info.ucl.ac.be
+        header: |-
+            Pour connaître le nom de domaine de votre machine, connectez-vous ici :
+
+            https://www.whatismyip.com/reverse-dns-lookup/
+
+            Normalement, c'est votre adresse IP qui apparait dans le champ texte. Remplacez celle-ci par ``130.104.230.69`` et cliquez sur le bouton bleu mentionnant "Lookup" et vous verrez si cette adresse IP correspond à un nom de domaine.
+
+            Si c'est le cas, le nom de domaine est composé de plusieurs parties, séparées par des points.
+
+            - la première partie, la plus à gauche, avant le premier point, correspond au nom spécifique de cette machine
+            - tout le reste, après le premier point, correspond au nom de domaine de la "zone" où se trouve la machine. C'est souvent le nom de l'organisation qui administre le réseau où l'ordinateur est connecté.
+
+            Notez ci-dessous le nom complet de la "zone" de la machine en question :
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 1.0

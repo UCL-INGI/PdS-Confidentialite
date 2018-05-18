@@ -1,0 +1,160 @@
+accessible: true
+author: ''
+context: |-
+    Maintenant que nous sommes un peu plus au fait de ce qu'est Internet, essayons de voir un tout petit peu les grands principes de son fonctionnement.
+
+    Le service principal d'Internet est de **transmettre des messages** depuis une machine connectée à une autre. Pour arriver à ce résultat, le fonctionnement du protocole **TCP/IP** est très proche de celui de la Poste (un protocole est un ensemble de règles à suivre pour permettre la communication) :
+
+    - chaque machine dispose d'un identifiant qu'on appelle **une adresse**;
+    - chaque message à transmettre doit indiquer **l'adresse de réception**, mais aussi **l'adresse d'émission**;
+    - les messages sont transportés **de proche en proche**, c'est-à-dire que lorsqu'une machine reçoit un de ces messages et que celui-ci ne lui est pas destiné, elle va le transférer à un de ses voisins directement connectés, pour que ce dernier continue la transmission et que, finalement, le message arrive à destination;
+    - ce processus peut faire intervenir de nombreuses machines intermédiaires, qu'on appelle **routeurs** et demander pas mal de transferts entre ceux-ci.
+
+    ----
+
+    **Si vous avez 100% comme résultat pour TOUTES les tâches facultatives, vous pouvez aller chercher un ballon ORANGE**
+
+    ----
+
+    **Vous avez 30 minutes pour accomplir ces 4 tâches "facultatives".**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: (facultatif) fonctionnement d'Internet / adresses IP
+network_grading: false
+order: 3
+problems:
+    '1':
+        success_message: |-
+            **Dans Internet, les machines ne sont pas identifiées par une adresse postale.** le protocole TCP/IP utilise la notion d'**adresse IP** pour identifier les machines connectées au réseau : chacune en reçoit (au moins) une qui est, a priori, unique (sauf dans certains cas). C'est cette adresse qui est utilisée comme **adresse de destination** dans les messages que la machine reçoit, ou comme **adresse source** dans les messages qu'elle envoie.
+
+            Ces adresses ont évidemment un format électronique et on les compose en juxtaposant une série de nombres les uns à côté des autres.
+        choices:
+        -   text: Oui
+        -   valid: true
+            text: Non
+        limit: 0
+        header: |-
+            Examinons quelques propositions et commençons par celle-ci : **«Dans Internet, les machines sont identifiées par une adresse : pays, ville (code postal), rue, numéro, numéro de boîte»**
+
+            Cette proposition est-elle correcte ?
+        type: multiple_choice
+        name: Une adresse avant toute chose...
+        error_message: |-
+            **Dans Internet, les machines ne sont pas identifiées par une adresse postale.** le protocole TCP/IP utilise la notion d'**adresse IP** pour identifier les machines connectées au réseau : chacune en reçoit (au moins) une qui est, a priori, unique (sauf dans certains cas). C'est cette adresse qui est utilisée comme **adresse de destination** dans les messages que la machine reçoit, ou comme **adresse source** dans les messages qu'elle envoie.
+
+            Ces adresses ont évidemment un format électronique et on les compose en juxtaposant une série de nombres les uns à côté des autres.
+    '2':
+        choices:
+        -   valid: true
+            text: 130.104.1.1
+            feedback: '- **130.104.1.1 est effectivement une forme de retranscription
+                traditionnelle d''une adresse IP dite de version 4 (IPv4).**'
+        -   valid: true
+            feedback: '- **2001:6a8:308F:1::1 est effectivement une forme de retranscription
+                traditionnelle d''une adresse IP dite de version 6 (IPv6).** Arrivées
+                après IPv4, ces adresses sont pour l''instant moins répandues dans
+                le monde que celles d''IPv4, mais en Belgique, à peu près **60% des
+                utilisateurs d''Internet utilisent une adresse IPv6**.'
+            text: 2001:6a8:308F:1::1
+        -   text: 10.0.0.1
+            valid: true
+            feedback: |-
+                - **10.0.0.1 est effectivement une forme de retranscription traditionnelle d'une adresse IP dite de version 4 (IPv4).** Cependant, cette adresse appartient à une gamme d'adresses dites « privées », dont l'usage est réservé à un réseau local, et qui ne devraient pas apparaître sur Internet. Il existe plusieurs types d'adresses privées, aussi bien en IPv4 qu'en IPv6.
+
+                Celles-ci étaient, au départ, destinées à réaliser des tests, mais au cours du temps elles ont servi à faire de plus en plus de choses, notamment grâce au **NAT** (Network Address Translation - Traduction d'adresses réseau), qui est utilisé sur pratiquement toutes les boîtes de connexion vendues par les opérateurs de Télécom, tels que Proximus, Voo ou encore Orange. Avec ces systèmes à la maison, vos appareils recoivent des adresses privées qui leur permet de communiquer entre eux au sein de votre réseau "interne".  Pour sortir de celui-ci et aller sur Internet, la boite connectée à Internet "traduit" en fait remplace l'adresse privée par son adresse publique. C'est donc elle qui réalise à la place de vos appareils les opérations sur le réseau, avec son adresse publique, et elle leur transmet ensuite les informations demandées.
+        -   feedback: '- **http://www.google.com** est une **URL** (Uniform Resource
+                Locator), c''est-à-dire l''indication, pour les applications qui peuvent
+                le comprendre, d''une ressource accessible dans le réseau. Ici, il
+                s''agit du **site web** de Google, mais cela pourrait aussi bien désigner
+                un fichier sur votre disque dur (``file://C:\Mes Documents\monfichier.docx``)
+                qu''un lien pour une vidéo-conférence (``sip:my_channel@conference.example.com``)'
+            text: http://www.google.com
+        -   text: https://fr.wikipedia.org/wiki/Vie_privée
+            feedback: '- **https://fr.wikipedia.org/wiki/Vie_privée** est un **URL**
+                (Uniform Resource Locator), c''est-à-dire l''indication, pour les
+                applications qui peuvent le comprendre, d''une ressource accessible
+                dans le réseau. Ici, il s''agit d''une **page web** sur Wikipedia,
+                mais cela pourrait aussi bien désigner un fichier sur votre disque
+                dur (``file://C:\Mes Documents\monfichier.docx``) qu''un lien pour
+                une vidéo-conférence (``sip:my_channel@conference.example.com``)'
+        -   text: 127.0.0.1
+            feedback: '- **127.0.0.1 est effectivement une forme de retranscription
+                traditionnelle d''une adresse IP dite de version 4 (IPv4).** Cette
+                adresse très particulière sert d''identification à votre machine locale,
+                pour toutes les communications internes à la machine elle-même.'
+            valid: true
+        limit: 0
+        header: |-
+            Bien entendu, pour les machines, toutes les adresses qu'on utilise sur Internet sont en fait constituées d'une suite de 0 et de 1 (au format binaire). Cependant, pour en faciliter la manipulation par les opérateurs humains, on a adopté diverses conventions d'écriture qui permettent de mieux s'y retrouver.
+
+            Essayez de sélectionner les adresses qui sont écrites dans un format reconnu par une machine et qui sont utilisées dans Internet.
+        name: Une adresse, des adresses
+        type: multiple_choice
+        multiple: true
+    '3':
+        choices:
+        -   feedback: '- **130.104.78** est le début d''une adresse **IPv4**'
+            text: Mon adresse commence par 130.104.78 c'est une adresse IPv6
+        -   text: Mon adresse commence par 130.104.78 c'est une adresse IPv4 privée,
+                j'accède donc à Internet par l'intermédiaire d'un dispositif NAT (si
+                vous ne savez pas ce qu'est NAT retournez à la question précédente)
+            feedback: '- **130.104.78** est le début d''une adresse **IPv4** tout
+                à fait publique et donc directement utilisable sur Internet. Dans
+                nos salles, vous n''avez pas besoin d''utiliser un dispositif NAT
+                comme à la maison car l''Université dispose de très nombreuses adresses
+                IPv4, entre autres toutes celles qui commencent par 130.104 (soit
+                65535 adresses rien que pour ce préfix).'
+        -   valid: true
+            text: Mon adresse commence par 130.104.78 c'est une adresse IPv4 normale
+        -   feedback: '- **2001:6a8:308f:** est le début d''une adresse **IPv6**'
+            text: 'Mon adresse commence par 2001:6a8:308f: c''est une adresse IPv4
+                normale'
+        -   feedback: '- **2001:6a8:308f:** est le début d''une adresse **IPv6** tout
+                à fait publique et donc directement utilisable sur Internet. Dans
+                nos salles, vous n''avez pas besoin d''utiliser un dispositif NAT
+                comme à la maison car l''Université dispose de très nombreuses adresses
+                IPv6, entre autres toutes celles qui commencent par 2001:6a8:308 (soit
+                1.93x10^25 adresses rien que pour ce préfix, un nombre gigantesque
+                qui s''écrit 193 suivit 23 zéros). (si vous ne savez pas ce qu''est
+                NAT retournez à la question précédente)'
+            valid: true
+            text: 'Mon adresse commence par 2001:6a8:308f: c''est une adresse IPv6
+                normale'
+        -   text: 'Mon adresse commence par 2001:6a8:308f: c''est une adresse locale'
+            feedback: '- **2001:6a8:308f:** est le début d''une adresse **IPv6** tout
+                à fait publique et donc directement utilisable sur Internet. Dans
+                nos salles, vous n''avez pas besoin d''utiliser un dispositif NAT
+                comme à la maison car l''Université dispose de très nombreuses adresses
+                IPv6, entre autres toutes celles qui commencent par 2001:6a8:308 (soit
+                1.93x10^25 adresses rien que pour ce préfix, un nombre gigantesque
+                qui s''écrit 193 suivit 23 zéros). (si vous ne savez pas ce qu''est
+                NAT retournez à la question précédente)'
+        -   text: Aucune des proposition ne correspond à l'adresse de ma machine
+            feedback: '- votre machine utilise forcément une adresse IP pour accéder
+                au réseau. Celle-ci est soit une IPv4, soit un IPv6. Il est même à
+                peu près certain que votre machine dispose d''une adresse de chaque
+                sorte.'
+        type: multiple_choice
+        name: What is my IP ?
+        multiple: true
+        header: |-
+            Etant connectée à Internet, votre machine dispose forcément d'une adresse IP.
+
+            Connectez-vous à l'URL suivant :
+
+            https://www.whatismyip.com/
+
+            Repérez l'adresse IP identifiée par ce site web comme étant celle de votre machine et sélectionnez la proposition la plus appropriée. Vous devez également sélectionner la seule autre proposition qui serait valide pour votre machine.
+        limit: 0
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 1.0

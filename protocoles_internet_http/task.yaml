@@ -1,0 +1,110 @@
+accessible: true
+author: ''
+context: |-
+    Pour terminer ces quelques explications sur le fonctionnement d'Internet, comme nous savons à présent comment sont transportés les
+    messages dans l'Internet, nous allons nous intéresser **au contenu** d'une
+    sorte de ces messages : comment récupérer une page web telle que celle de
+    Facebook ?
+
+    Le contenu des messages transportés par les machines de l'Internet dépend
+    fortement du type de données que l'on veut manipuler. Ainsi, dans le cas
+    d'un jeu en ligne tel que Call of Duty, les données sont transférées sous
+    forme binaire (ce sont les actions des joueurs, les données de la cartes,
+    etc.), illisibles pour un être humain (normal), mais faciles à décoder pour
+    le programme du jeu.
+
+    Il n'en est pas de même pour le web qui est une application qui a été
+    définie pour être utilisable directement par un être humain, sans avoir
+    besoin d'utiliser un logiciel particulier. Les messages échangés sur le web
+    sont simplement écrits sous forme de texte et sont définis par le protocole
+    **HTTP**. (souvenez-vous un protocole est un ensemble de règles qui permettent d'indiquer comment communiquer)
+
+    Sans entrer dans les détails, nous allons voir quel est l'échange de
+    messages le plus simple que l'on puisse faire sur le web.
+
+    Pour commencer, cliquez sur le lien suivant qui vous mène à une page
+    d'exemple :
+
+    http://sciencesinfuses.info.ucl.ac.be/livetest/index.py
+
+    **Un message secret a été transféré entre votre navigateur et le serveur au
+    moment où vous avez visualisé cette page, saurez-vous le découvrir ?**
+
+    ----
+
+    **Si vous avez 100% comme résultat pour TOUTES les tâches facultatives, vous pouvez aller chercher un ballon ORANGE**
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: (facultatif) fonctionnement d'Internet / HTTP
+network_grading: false
+order: 6
+problems:
+    HTTP-telnet:
+        header: |-
+            Si vous examinez la page indiquée dans l'énoncé, vous risquez de ne
+            rien voir de particulier, mais si nous ouvrons le capot, on risque
+            de découvrir d'autres choses !
+
+            Pour cela, nous allons utiliser un site web qui permet de se
+            connecter de façon très simple à divers services sur Internet.
+
+            Utilisez d'abord les outils que nous avons vu précédemment pour
+            découvrir l'adresse IP du serveur qui est derrière le nom de
+            domaine ``sciencesinfuses.info.ucl.ac.be`` (conseil: cliquez `ici
+            <https://www.whatismyip.com/dns-lookup/>`_).
+
+            A présent, pour utiliser notre nouvel outil, cliquez ici :
+
+            http://telnet-online.net/
+
+            Dans cette interface, on peut taper quelques commandes simples pour
+            ouvrir une connexion vers notre serveur. Grâce à cet outil, nous
+            allons reproduire exactement ce qu'a fait le navigateur pour
+            récupérer la page web précédente, c'est-à-dire envoyer des
+            commandes et lire les données retournées par le serveur.
+
+            Cette application permet de visualiser l'échange de commandes entre le navigateur et le serveur. C'est normalement le
+            navigateur qui va traiter ces données pour afficher au visiteur une
+            page web correctement présentée. On peut donc y voir les titres,
+            etc. et certaines choses, comme certains
+            paramètres de négociation entre le serveur et le navigateur, qui ne
+            sont jamais affichées à l'utilisateur.
+
+            En remplaçant ``ADRESSE_IP`` par l'adresse que vous venez juste de
+            trouver, tapez dans le champ en bas ::
+
+              open ADRESSE_IP 80
+
+            Attendez la confirmation de l'ouverture de connexion.
+
+            Une fois connecté, vous pouvez utiliser le protocle HTTP : on
+            va d'abord demander un fichier en particulier. Tapez ::
+
+              GET /livetest/index.py HTTP/1.0
+
+            Puis on va préciser pour quel nom de domaine on
+            interroge le serveur. Tapez ::
+
+              Host: sciencesinfuses.info.ucl.ac.be
+
+            et tapez simplement sur la touche entrée pour envoyer une ligne
+            vide.
+
+            Normalement, vous devriez maintenant voir la réponse complète du
+            serveur et (peut-être) **découvrir le message secret**, que vous
+            pouvez indiquer ci-dessous.
+        answer: Ceci est un secret
+        type: match
+        name: Mais le web dans tout ça ?
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 1.0
